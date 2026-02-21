@@ -21,6 +21,7 @@ Depending on playbook:
 
 - `runbooks/automation.md`
 - `runbooks/wunderbox.md`
+- `development/devtools-container.md` (for lint/test tooling in container)
 
 ## Canonical contract
 
