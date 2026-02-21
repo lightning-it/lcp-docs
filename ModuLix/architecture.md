@@ -3,7 +3,7 @@
 ## Execution model
 
 - Default execution path:
-  - `modulix/ansible/scripts/ansible-nav`
+  - `modulix-automation/ansible/scripts/ansible-nav`
   - toolbox container runtime
   - ansible-navigator execution (exact flags defined in runtime contract docs)
 - Base collections are provided by the configured EE image.
@@ -17,5 +17,5 @@
 
 ## Documentation boundary
 
-- Release-coupled contract docs remain in `modulix`.
+- Release-coupled contract docs remain in `modulix-automation`.
 - Operator workflows and long-form guides remain in `lcp-docs`.

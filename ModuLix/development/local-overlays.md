@@ -5,7 +5,7 @@ Local overlays are for development only.
 ## Workflow
 
 ```bash
-cd /path/to/modulix/ansible
+cd /path/to/modulix-automation/ansible
 ./scripts/install-local-collections
 ```
 

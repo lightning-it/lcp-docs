@@ -37,7 +37,7 @@ Run this when you need local collection changes to overlay EE-provided collectio
 
 For full workflows and all variants, see `How-To`.
 
-### 4) Image-only execution (no git clone of modulix repo)
+### 4) Image-only execution (no git clone of modulix-automation repo)
 
 If you only have the toolbox image and mount your local Ansible workspace, use
 `ansible-nav-local` directly inside the container:
@@ -253,8 +253,8 @@ ansible-nav-local run playbooks/services/02-aap-rebuild.yml \
 This runbook intentionally does not duplicate the executable runtime contract.
 For runtime defaults, flags, and support boundaries, use:
 
-- `https://github.com/lightning-it/modulix/blob/main/docs/runtime-contract.md`
-- `https://github.com/lightning-it/modulix/blob/main/docs/support-matrix.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
 
 ### Vault + Nexus notes
 

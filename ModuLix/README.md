@@ -25,10 +25,10 @@ Curated operator and architecture portal for ModuLix in LCP.
 
 Canonical runtime flags and behavior are maintained in the automation repo:
 
-- `https://github.com/lightning-it/modulix/blob/main/docs/runtime-contract.md`
-- `https://github.com/lightning-it/modulix/blob/main/docs/support-matrix.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
 
 For release-specific behavior, use tagged links:
-`https://github.com/lightning-it/modulix/blob/<tag>/docs/runtime-contract.md`.
+`https://github.com/lightning-it/modulix-automation/blob/<tag>/docs/runtime-contract.md`.
 
 Treat these files as source-of-truth for executable behavior.

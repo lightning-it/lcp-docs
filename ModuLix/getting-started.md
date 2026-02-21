@@ -5,7 +5,7 @@
 Run ModuLix playbooks via the wrapper:
 
 ```bash
-cd /path/to/modulix/ansible
+cd /path/to/modulix-automation/ansible
 ./scripts/ansible-nav run <playbook.yml> -i <inventory.yml> --limit <host-or-group>
 ```
 
@@ -26,5 +26,5 @@ Depending on playbook:
 
 For exact runtime flags/defaults and support scope, see:
 
-- `https://github.com/lightning-it/modulix/blob/main/docs/runtime-contract.md`
-- `https://github.com/lightning-it/modulix/blob/main/docs/support-matrix.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
