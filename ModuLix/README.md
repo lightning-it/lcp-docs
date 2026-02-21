@@ -20,6 +20,7 @@ Curated operator and architecture portal for ModuLix in LCP.
 ## Development
 
 - Local overlays and extension patterns: `development/local-overlays.md`
+- Devtools container usage (pre-commit, lint/test): `development/devtools-container.md`
 
 ## Canonical runtime contract (release-coupled)
 
