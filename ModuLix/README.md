@@ -11,7 +11,29 @@ Curated operator and architecture portal for ModuLix in LCP.
 ## Runbooks
 
 - Automation workflows: `runbooks/automation.md`
-- Wunderbox: `runbooks/wunderbox.md`
+- `01` Wunderbox: `runbooks/wunderbox.md`
+- `02` AAP: `runbooks/aap.md`
+- `03` Linux Workstation: `runbooks/linux-workstation.md`
+- `04` OCP: `runbooks/ocp.md`
+
+## Service Specifications
+
+- `01` Wunderbox service index: `services/wunderbox/README.md`
+- `01` Wunderbox architecture: `services/wunderbox/architecture.md`
+- `01` Wunderbox requirements: `services/wunderbox/requirements.md`
+- `01` Wunderbox firewall rules: `services/wunderbox/firewall-rules.md`
+- `02` AAP service index: `services/aap/README.md`
+- `02` AAP architecture: `services/aap/architecture.md`
+- `02` AAP requirements: `services/aap/requirements.md`
+- `02` AAP firewall rules: `services/aap/firewall-rules.md`
+- `03` Linux Workstation service index: `services/linux-workstation/README.md`
+- `03` Linux Workstation architecture: `services/linux-workstation/architecture.md`
+- `03` Linux Workstation requirements: `services/linux-workstation/requirements.md`
+- `03` Linux Workstation firewall rules: `services/linux-workstation/firewall-rules.md`
+- `04` OCP service index: `services/ocp/README.md`
+- `04` OCP architecture: `services/ocp/architecture.md`
+- `04` OCP requirements: `services/ocp/requirements.md`
+- `04` OCP firewall rules: `services/ocp/firewall-rules.md`
 
 ## Troubleshooting
 

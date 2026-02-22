@@ -183,22 +183,16 @@ ansible-nav-local run playbooks/stage-2b/10-firewall.yml \
   -i inventories/corp/inventory.yml --limit fw01.prd.iso.corp.l-it.io
 ```
 
-20 Workstations (VM+RHEL9) setup:
+### Service deployment order (canonical)
 
-20.1 DMZ
+Use this order for service rollouts:
 
-```bash
-ansible-nav-local run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+1. `01-wunderbox`
+2. `02-aap`
+3. `03-linux-workstation`
+4. `04-ocp`
 
-ansible-nav-local run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
-
-ansible-nav-local run playbooks/stage-2b/11-workstation.yml \
-  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
-```
-
-21 Wunderbox (VM+RHEL9) setup:
+01 Wunderbox (VM+RHEL9) setup:
 
 ```bash
 ansible-nav-local run playbooks/stage-1/infrastructure-platform-vsphere/90-vm-destroy.yml \
@@ -214,14 +208,14 @@ ansible-nav-local run playbooks/stage-2b/12-wunderbox.yml \
   -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
 ```
 
-21.1 Wunderbox rebuild (single pipeline playbook):
+01.1 Wunderbox rebuild (single pipeline playbook):
 
 ```bash
 ansible-nav-local run playbooks/services/01-wunderbox-rebuild.yml \
   -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
 ```
 
-22 AAP (VM+RHEL9) setup:
+02 AAP (VM+RHEL9) setup:
 
 ```bash
 ansible-nav-local run playbooks/stage-1/infrastructure-platform-vsphere/90-vm-destroy.yml \
@@ -237,11 +231,37 @@ ansible-nav-local run playbooks/stage-2b/13-aap.yml \
   -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io
 ```
 
-22.1 AAP rebuild (single pipeline playbook):
+02.1 AAP rebuild (single pipeline playbook):
 
 ```bash
 ansible-nav-local run playbooks/services/02-aap-rebuild.yml \
   -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io
+```
+
+03 Linux Workstation (VM+RHEL9) setup:
+
+```bash
+ansible-nav-local run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
+  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+
+ansible-nav-local run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
+  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+
+ansible-nav-local run playbooks/stage-2b/11-workstation.yml \
+  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+```
+
+04 OCP (stage-2c) setup:
+
+```bash
+ansible-nav-local run playbooks/stage-2c/container-platform-ocp4/prepare-ee.yml \
+  -i inventories/<env>/inventory.yml
+
+ansible-nav-local run playbooks/stage-2c/container-platform-ocp4/20-ocp-install.yml \
+  -i inventories/<env>/inventory.yml --limit <ocp-host-or-group>
+
+ansible-nav-local run playbooks/stage-2c/container-platform-ocp4/21-post-install.yml \
+  -i inventories/<env>/inventory.yml
 ```
 
 ---

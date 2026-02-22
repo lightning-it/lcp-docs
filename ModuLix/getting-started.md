@@ -20,7 +20,10 @@ Depending on playbook:
 ## 3) Use runbooks
 
 - `runbooks/automation.md`
-- `runbooks/wunderbox.md`
+- `runbooks/wunderbox.md` (`01-wunderbox`)
+- `runbooks/aap.md` (`02-aap`)
+- `runbooks/linux-workstation.md` (`03-linux-workstation`)
+- `runbooks/ocp.md` (`04-ocp`)
 - `development/devtools-container.md` (for lint/test tooling in container)
 
 ## Canonical contract

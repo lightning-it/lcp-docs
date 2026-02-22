@@ -19,31 +19,25 @@ Repo (public): https://github.com/lightning-it/modulix-automation
 
 ---
 
-## ansible-navigator configuration
+## Generic automation reference
 
-Runtime behavior for wrapper defaults, flags, and support scope is maintained in:
+Generic Ansible automation guidance is maintained in [`automation.md`](automation.md):
 
-- `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
-- `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
+- Runtime wrapper usage and flags: [`automation.md#use-the-runtime-wrapper`](automation.md#use-the-runtime-wrapper)
+- Collection and Execution Environment prerequisites: [`automation.md#install-collections`](automation.md#install-collections)
+- Inventory and roles layout: [`automation.md#inventory-and-roles`](automation.md#inventory-and-roles)
+- Shared secret handling: [`automation.md#secrets`](automation.md#secrets)
 
 ---
 
-## Prerequisites: Ansible Collections (ModuLix workspace)
+## Service specification
 
-Playbooks are executed from the ModuLix Ansible workspace via Execution Environment mode.
-Required base collections are expected to come from the configured EE image.
+Service-specific architecture and policy details are documented under
+[`../services/wunderbox/`](../services/wunderbox/README.md):
 
-### Optional: local collection overlays
-
-Use this only for local `ansible-collection-*` development:
-
-```bash
-./scripts/install-local-collections
-```
-
-> Notes:
-> - In the execution environment, `/runner/project` is the workspace root mounted into the container.
-> - `collections-dev/` is used as the local overlay directory for development builds.
+- Architecture: [`../services/wunderbox/architecture.md`](../services/wunderbox/architecture.md)
+- Requirements: [`../services/wunderbox/requirements.md`](../services/wunderbox/requirements.md)
+- Firewall rules: [`../services/wunderbox/firewall-rules.md`](../services/wunderbox/firewall-rules.md)
 
 ---
 
@@ -71,18 +65,14 @@ ansible-navigator run playbooks/stage-2b/12-wunderbox.yml \
 
 ## Inventory and roles
 
-- Inventory: `inventories/<ENV>/inventory.yml`
-- Roles path: `./roles` (set in `ansible.cfg`)
-- Adjust variables in `group_vars/` and `host_vars/` as needed.
+Inventory, roles path, and variable layout conventions are documented in
+[`automation.md`](automation.md).
 
 ---
 
 ## Secrets
 
-- **Do not commit secrets.**
-- Use:
-  - Ansible Vault (`ANSIBLE_VAULT_PASSWORD_FILE`)
-  - SOPS or your preferred secret store
+Shared secret handling conventions are documented in [`automation.md`](automation.md).
 
 ---
 
