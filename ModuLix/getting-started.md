@@ -9,7 +9,22 @@ cd /path/to/modulix-automation/ansible
 ./scripts/ansible-nav run <playbook.yml> -i <inventory.yml> --limit <host-or-group>
 ```
 
-## 2) Provide runtime inputs
+Current defaults:
+
+- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.5.0`
+- run EE image: `quay.io/l-it/ee-wunder-ansible-ubi9:v1.9.3`
+
+## 2) Use the DevOps container for checks
+
+Use the devtools container for repository tooling (`pre-commit`, `ansible-lint`,
+Molecule, actionlint) without installing all tools on the host.
+
+- image: `quay.io/l-it/ee-wunder-devtools-ubi9:v1.6.0`
+- guide: `development/devtools-container.md`
+
+Keep playbook execution on `./scripts/ansible-nav` (runtime wrapper path).
+
+## 3) Provide runtime inputs
 
 Depending on playbook:
 
@@ -17,7 +32,7 @@ Depending on playbook:
 - SSH access/agent
 - vault/secret inputs
 
-## 3) Use runbooks
+## 4) Use runbooks
 
 - `runbooks/automation.md`
 - `runbooks/wunderbox.md` (`01-wunderbox`)

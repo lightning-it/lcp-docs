@@ -59,7 +59,7 @@ podman run --rm -it \
   -e SSH_AUTH_SOCK=/runner/ssh-agent.sock \
   -e ANSIBLE_CONFIG=/runner/project/ansible.cfg \
   -e ANSIBLE_NAVIGATOR_LOG_FILE=/tmp/ansible-navigator.log \
-  quay.io/l-it/ee-wunder-toolbox-ubi9:v1.4.0 \
+  quay.io/l-it/ee-wunder-toolbox-ubi9:v1.5.0 \
   /bin/bash
 ```
 
