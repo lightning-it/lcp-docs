@@ -8,6 +8,6 @@ Container layers used by ModuLix:
 
 Detailed image documentation:
 
-- `../05-container-images/10-toolbox.md`
-- `../05-container-images/20-ansible.md`
-- `../05-container-images/30-devtools.md`
+- `../11-container-images/10-toolbox.md`
+- `../11-container-images/20-ansible.md`
+- `../11-container-images/30-devtools.md`

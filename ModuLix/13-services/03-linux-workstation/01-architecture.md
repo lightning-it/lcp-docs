@@ -7,7 +7,7 @@ with controlled XRDP access.
 
 ## Execution path
 
-- Service runbook: [`../../06-runbooks/04-linux-workstation.md`](../../06-runbooks/04-linux-workstation.md)
+- Service runbook: [`../../12-runbooks/04-linux-workstation.md`](../../12-runbooks/04-linux-workstation.md)
 - Primary playbook: `modulix-automation/ansible/playbooks/stage-2b/11-workstation.yml`
 - Runtime wrapper and execution contract: [`../../03-automation.md`](../../03-automation.md)
 

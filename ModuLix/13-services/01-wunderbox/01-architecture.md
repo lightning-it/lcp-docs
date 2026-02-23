@@ -13,7 +13,7 @@ Wunderbox is the internal "core services" host in ModuLix and provides:
 
 ## Execution path
 
-- Service runbook: [`../../06-runbooks/02-wunderbox.md`](../../06-runbooks/02-wunderbox.md)
+- Service runbook: [`../../12-runbooks/02-wunderbox.md`](../../12-runbooks/02-wunderbox.md)
 - Primary playbook: `modulix-automation/ansible/playbooks/stage-2b/12-wunderbox.yml`
 - Runtime wrapper and execution contract: [`../../03-automation.md`](../../03-automation.md)
 

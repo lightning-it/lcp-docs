@@ -13,7 +13,7 @@ Canonical runtime behavior, supported flags, and support scope are defined in:
 
 ### 3) Service/platform execution index
 
-- `06-runbooks/01-services.md`
+- `12-runbooks/01-services.md`
 
 Use this index as the entry point for service-specific execution:
 
@@ -21,7 +21,7 @@ Use this index as the entry point for service-specific execution:
 - mapping between service manual, execution runbook, and primary playbooks
 - canonical rollout order across services
 - quick execution entry points per service
-- links to deeper service manuals under `07-services/`
+- links to deeper service manuals under `13-services/`
 
 Use this file (`03-automation.md`) for generic runtime behavior only (wrapper, contract, and shared automation rules).
 
@@ -39,7 +39,7 @@ Default runtime installs come from the configured execution environment and the
 `scripts/ansible-nav` preflight behavior.
 
 For local `ansible-collection-*` development overlays, see:
-`08-development/01-ansible-collection-development.md`.
+`14-development/01-ansible-collection-development.md`.
 
 ## Secret Input Contract
 

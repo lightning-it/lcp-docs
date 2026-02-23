@@ -33,11 +33,11 @@ Generic Ansible automation guidance is maintained in [`automation.md`](../03-aut
 ## Service specification
 
 Service-specific architecture and policy details are documented under
-[`../07-services/01-wunderbox/`](../07-services/01-wunderbox/README.md):
+[`../13-services/01-wunderbox/`](../13-services/01-wunderbox/README.md):
 
-- Architecture: [`../07-services/01-wunderbox/01-architecture.md`](../07-services/01-wunderbox/01-architecture.md)
-- Requirements: [`../07-services/01-wunderbox/02-requirements.md`](../07-services/01-wunderbox/02-requirements.md)
-- Firewall rules: [`../07-services/01-wunderbox/03-firewall-rules.md`](../07-services/01-wunderbox/03-firewall-rules.md)
+- Architecture: [`../13-services/01-wunderbox/01-architecture.md`](../13-services/01-wunderbox/01-architecture.md)
+- Requirements: [`../13-services/01-wunderbox/02-requirements.md`](../13-services/01-wunderbox/02-requirements.md)
+- Firewall rules: [`../13-services/01-wunderbox/03-firewall-rules.md`](../13-services/01-wunderbox/03-firewall-rules.md)
 
 ---
 

@@ -9,10 +9,10 @@ configuration-as-code, and day-2 operations.
 
 ## Service specification
 
-- Service index: `../07-services/02-aap/README.md`
-- Architecture: `../07-services/02-aap/01-architecture.md`
-- Requirements: `../07-services/02-aap/02-requirements.md`
-- Firewall rules: `../07-services/02-aap/03-firewall-rules.md`
+- Service index: `../13-services/02-aap/README.md`
+- Architecture: `../13-services/02-aap/01-architecture.md`
+- Requirements: `../13-services/02-aap/02-requirements.md`
+- Firewall rules: `../13-services/02-aap/03-firewall-rules.md`
 
 ## Running the AAP playbooks
 

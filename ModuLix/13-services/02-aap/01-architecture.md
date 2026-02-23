@@ -10,7 +10,7 @@ AAP provides automation control-plane capabilities for ModuLix:
 
 ## Execution path
 
-- Service runbook: `../../06-runbooks/03-aap.md`
+- Service runbook: `../../12-runbooks/03-aap.md`
 - Primary playbook: `modulix-automation/ansible/playbooks/stage-2b/13-aap.yml`
 - Runtime wrapper and execution contract: `../../03-automation.md`
 

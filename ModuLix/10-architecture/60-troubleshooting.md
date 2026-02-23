@@ -2,6 +2,6 @@
 
 Troubleshooting content is isolated from service specs and runbooks:
 
-- Common failures: `../09-troubleshooting/01-common-failures.md`
+- Common failures: `../15-troubleshooting/01-common-failures.md`
 
 Add incident-focused diagnostics here, and keep procedural execution steps in runbooks.

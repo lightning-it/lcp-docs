@@ -24,4 +24,4 @@ For each OCP environment, define and maintain:
 
 1. Update environment-specific inventory/network policy source of truth.
 2. Mirror the effective rule set in this document (or linked environment appendix).
-3. Validate with stage-2c runbook execution (`../../06-runbooks/05-ocp.md`).
+3. Validate with stage-2c runbook execution (`../../12-runbooks/05-ocp.md`).

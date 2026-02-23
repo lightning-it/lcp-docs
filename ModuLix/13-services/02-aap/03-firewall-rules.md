@@ -16,4 +16,4 @@ Current default firewall policy for AAP hosts is defined in:
 
 1. Update inventory firewall vars in `ansible-inventory-lit`.
 2. Update this document to keep architecture docs aligned.
-3. Validate with service runbook execution (`../../06-runbooks/03-aap.md`).
+3. Validate with service runbook execution (`../../12-runbooks/03-aap.md`).

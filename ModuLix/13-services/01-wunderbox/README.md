@@ -5,7 +5,7 @@ It is the canonical location for non-procedural details such as architecture,
 requirements, and firewall policy.
 
 Use the runbook for execution steps:
-- [`../../06-runbooks/02-wunderbox.md`](../../06-runbooks/02-wunderbox.md)
+- [`../../12-runbooks/02-wunderbox.md`](../../12-runbooks/02-wunderbox.md)
 
 ## Documents
 
@@ -15,5 +15,5 @@ Use the runbook for execution steps:
 
 ## Scope boundary
 
-- `06-runbooks/02-wunderbox.md` explains how to run and operate playbooks.
+- `12-runbooks/02-wunderbox.md` explains how to run and operate playbooks.
 - This folder explains what the service needs and how it is designed.

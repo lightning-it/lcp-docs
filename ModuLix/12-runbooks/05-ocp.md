@@ -33,11 +33,11 @@ Generic Ansible automation guidance is maintained in [`automation.md`](../03-aut
 ## Service specification
 
 Service-specific architecture and policy details are documented under
-[`../07-services/04-ocp/`](../07-services/04-ocp/README.md):
+[`../13-services/04-ocp/`](../13-services/04-ocp/README.md):
 
-- Architecture: [`../07-services/04-ocp/01-architecture.md`](../07-services/04-ocp/01-architecture.md)
-- Requirements: [`../07-services/04-ocp/02-requirements.md`](../07-services/04-ocp/02-requirements.md)
-- Firewall rules: [`../07-services/04-ocp/03-firewall-rules.md`](../07-services/04-ocp/03-firewall-rules.md)
+- Architecture: [`../13-services/04-ocp/01-architecture.md`](../13-services/04-ocp/01-architecture.md)
+- Requirements: [`../13-services/04-ocp/02-requirements.md`](../13-services/04-ocp/02-requirements.md)
+- Firewall rules: [`../13-services/04-ocp/03-firewall-rules.md`](../13-services/04-ocp/03-firewall-rules.md)
 
 ---
 

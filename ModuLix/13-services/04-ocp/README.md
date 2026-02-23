@@ -3,7 +3,7 @@
 This folder contains the service-level specification for OCP in ModuLix.
 
 Use the runbook for execution steps:
-- [`../../06-runbooks/05-ocp.md`](../../06-runbooks/05-ocp.md)
+- [`../../12-runbooks/05-ocp.md`](../../12-runbooks/05-ocp.md)
 
 ## Documents
 
@@ -13,5 +13,5 @@ Use the runbook for execution steps:
 
 ## Scope boundary
 
-- `06-runbooks/05-ocp.md` explains how to run stage-2c OCP playbooks.
+- `12-runbooks/05-ocp.md` explains how to run stage-2c OCP playbooks.
 - This folder explains architecture, requirement, and policy baselines.

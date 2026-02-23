@@ -21,4 +21,4 @@ Current firewall behavior for workstation hosts is composed from:
 
 1. Update base or workstation-specific firewall vars in `ansible-inventory-lit`.
 2. Update this document to keep architecture docs aligned.
-3. Validate with service runbook execution (`../../06-runbooks/04-linux-workstation.md`).
+3. Validate with service runbook execution (`../../12-runbooks/04-linux-workstation.md`).

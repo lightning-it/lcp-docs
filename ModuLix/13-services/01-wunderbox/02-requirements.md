@@ -4,7 +4,7 @@
 
 | Area | Requirement | Source |
 | --- | --- | --- |
-| Host profile | RHEL 9 core-services VM (no GUI) | `../../06-runbooks/02-wunderbox.md` |
+| Host profile | RHEL 9 core-services VM (no GUI) | `../../12-runbooks/02-wunderbox.md` |
 | Target inventory group | `wunderboxes` | `modulix-automation/ansible/playbooks/stage-2b/12-wunderbox.yml` and inventory conventions |
 | Execution mode | Execution Environment with required collections | `../../03-automation.md` |
 
@@ -14,7 +14,7 @@
   [`../../03-automation.md`](../../03-automation.md).
 - Inventory must contain required host/group vars for the enabled service roles.
 - For local collection development, use
-  [`../../08-development/01-ansible-collection-development.md`](../../08-development/01-ansible-collection-development.md).
+  [`../../14-development/01-ansible-collection-development.md`](../../14-development/01-ansible-collection-development.md).
 
 ## Credential and secret requirements
 

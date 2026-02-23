@@ -7,7 +7,7 @@ ModuLix.
 
 ## Execution path
 
-- Service runbook: [`../../06-runbooks/05-ocp.md`](../../06-runbooks/05-ocp.md)
+- Service runbook: [`../../12-runbooks/05-ocp.md`](../../12-runbooks/05-ocp.md)
 - Stage-2c workspace: `modulix-automation/ansible/playbooks/stage-2c/container-platform-ocp4/`
 - Runtime wrapper and execution contract: [`../../03-automation.md`](../../03-automation.md)
 

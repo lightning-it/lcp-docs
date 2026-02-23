@@ -4,7 +4,7 @@ This folder contains the service-level specification for Linux Workstation in
 ModuLix.
 
 Use the runbook for execution steps:
-- [`../../06-runbooks/04-linux-workstation.md`](../../06-runbooks/04-linux-workstation.md)
+- [`../../12-runbooks/04-linux-workstation.md`](../../12-runbooks/04-linux-workstation.md)
 
 ## Documents
 
@@ -14,5 +14,5 @@ Use the runbook for execution steps:
 
 ## Scope boundary
 
-- `06-runbooks/04-linux-workstation.md` explains how to run and operate playbooks.
+- `12-runbooks/04-linux-workstation.md` explains how to run and operate playbooks.
 - This folder explains what the service needs and how it is designed.
