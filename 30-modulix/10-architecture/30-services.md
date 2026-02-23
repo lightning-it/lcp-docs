@@ -1,6 +1,9 @@
 # Architecture: Services
 
-Service specifications are grouped by numbered service domain:
+Service specifications are grouped by numbered service domain.
+
+They are technology-specific build definitions and describe what must exist for
+each service implementation.
 
 - Wunderbox: `../20-services/10-wunderbox/00-index.md`
 - AAP: `../20-services/20-aap/00-index.md`

@@ -23,8 +23,14 @@ from high-level views to domain indexes.
 
 ## Service Specifications
 
-Service specifications are non-procedural references for architecture,
-requirements, and policy details that complement runbooks.
+Service specifications define technology-specific service builds (for example
+Wunderbox, AAP, Linux Workstation, OCP).
+
+They answer what is built:
+
+- service architecture and component boundaries
+- technical requirements and dependencies
+- service-specific policy and network/firewall constraints
 
 - Index: `20-services/00-index.md`
 - Wunderbox index: `20-services/10-wunderbox/00-index.md` (runbook: `30-runbooks/10-wunderbox.md`)
@@ -34,8 +40,17 @@ requirements, and policy details that complement runbooks.
 
 ## Runbooks
 
-Runbooks are execution-focused operator guides with concrete procedures and
-command entry points per service.
+Runbooks define the deployment method used to deliver a service.
+
+They answer how a service is deployed in a step-by-step, method-first way:
+
+- prepare scope, inventory, and prerequisites
+- execute with the standard runtime contract
+- validate deployment outcome
+- capture follow-up and troubleshooting steps
+
+Runbooks are intentionally non-technology-specific in structure, then mapped to
+service-specific entry points.
 
 - Index: `30-runbooks/00-index.md`
 - Wunderbox: `30-runbooks/10-wunderbox.md`

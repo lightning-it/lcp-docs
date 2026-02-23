@@ -30,8 +30,8 @@ Each control should define:
 
 ## Mapping and alignment
 
-- Controls should be mapped to requirements in [`requirements.md`](requirements.md).
-- Controls should reference process outputs from [`processes.md`](processes.md).
+- Controls should be mapped to requirements in [`20-requirements.md`](20-requirements.md).
+- Controls should reference process outputs from [`30-processes.md`](30-processes.md).
 - Security-specific controls should be cross-referenced with `../10-isms/`.
 
 ## Exceptions

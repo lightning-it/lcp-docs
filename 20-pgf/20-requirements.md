@@ -37,8 +37,8 @@ Minimum requirement categories for each service:
 
 Each requirement should map to:
 
-- at least one operational process in [`processes.md`](processes.md)
-- at least one control in [`controls.md`](controls.md)
+- at least one operational process in [`30-processes.md`](30-processes.md)
+- at least one control in [`40-controls.md`](40-controls.md)
 - evidence artifacts in the team evidence repository
 
 ## Review

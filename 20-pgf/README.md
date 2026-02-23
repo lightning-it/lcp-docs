@@ -1,34 +1,28 @@
-# lcp-pgf
+# PGF Documentation
 
-LCP PGF component (Structure and Operational Reliability): governance framework
-for operational handbooks, requirement catalogs, and reliable service delivery.
+Curated operations governance portal for the LCP PGF component.
 
-## Purpose
+## Start Here
 
-This folder is the entry point for PGF documentation in LCP.
+Use these documents first to understand PGF scope, operating model, and
+control/evidence expectations.
 
-## Start here
-
-- Overview: [`overview.md`](overview.md)
-- Requirements catalog model: [`requirements.md`](requirements.md)
-- Process model: [`processes.md`](processes.md)
-- Control catalog: [`controls.md`](controls.md)
-
-Recommended reading order:
-
-1. `overview.md`
-2. `requirements.md`
-3. `processes.md`
-4. `controls.md`
+- `00-index.md`
+- `10-overview.md`
+- `20-requirements.md`
+- `30-processes.md`
+- `40-controls.md`
 
 ## Scope
 
-- Operational handbooks and operating model guidance
-- Requirement catalogs and implementation criteria
-- Process descriptions, responsibilities, and control checkpoints
-- Cross-component coordination guidance for ISMS and ModuLix
+PGF defines the operational reliability layer in LCP:
 
-## Boundaries
+- service operating model and ownership clarity
+- requirement design and traceability
+- process execution standards
+- control and evidence expectations
 
-- Security governance and compliance management belong in `../10-isms/`.
-- Technical automation implementation belongs in `../30-modulix/`.
+## Interfaces
+
+- Security governance and compliance baseline: `../10-isms/`
+- Technical automation and runtime execution: `../30-modulix/`

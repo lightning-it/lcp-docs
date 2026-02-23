@@ -39,7 +39,8 @@ The product page explains what LCP is at a high level. This repository exists to
 
 ## PGF quick links
 
-- Overview: [`20-pgf/overview.md`](20-pgf/overview.md)
-- Requirements: [`20-pgf/requirements.md`](20-pgf/requirements.md)
-- Processes: [`20-pgf/processes.md`](20-pgf/processes.md)
-- Controls: [`20-pgf/controls.md`](20-pgf/controls.md)
+- Index: [`20-pgf/00-index.md`](20-pgf/00-index.md)
+- Overview: [`20-pgf/10-overview.md`](20-pgf/10-overview.md)
+- Requirements: [`20-pgf/20-requirements.md`](20-pgf/20-requirements.md)
+- Processes: [`20-pgf/30-processes.md`](20-pgf/30-processes.md)
+- Controls: [`20-pgf/40-controls.md`](20-pgf/40-controls.md)

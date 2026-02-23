@@ -5,9 +5,12 @@ ModuLix is organized around one execution contract and multiple documentation la
 1. Runtime contract (`scripts/ansible-nav`) in `modulix-automation`
 2. Execution containers (toolbox + ansible EE + devtools EE)
 3. LIT Ansible collections (`lit.foundational`, `lit.rhel`, `lit.supplementary`, `lit.ocp`)
-4. Service playbooks and service specs
-5. Operator runbooks
+4. Technology service specifications and build playbooks
+5. Method-first deployment runbooks
 6. Development and troubleshooting guides
+
+Service specs describe what is built (technology-specific target state).
+Runbooks describe how deployment is performed (step-by-step delivery method).
 
 Use this architecture section as entry point by domain index:
 

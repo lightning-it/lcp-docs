@@ -1,6 +1,14 @@
 # Architecture: Runbooks
 
-Runbooks are execution-oriented documents:
+Runbooks are method-first deployment documents.
+
+They provide a non-technology-specific, step-by-step way to deliver services:
+
+1. Scope and prerequisites
+2. Input and inventory preparation
+3. Runtime execution
+4. Validation and evidence
+5. Troubleshooting and follow-up
 
 - Runbooks index: `../30-runbooks/00-index.md`
 - Wunderbox runbook: `../30-runbooks/10-wunderbox.md`

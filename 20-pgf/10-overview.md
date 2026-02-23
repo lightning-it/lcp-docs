@@ -28,10 +28,10 @@ operated with consistent quality and predictable outcomes.
 
 ## Document set
 
-- [`requirements.md`](requirements.md): requirement model and baseline
+- [`20-requirements.md`](20-requirements.md): requirement model and baseline
   requirement areas.
-- [`processes.md`](processes.md): operational processes and expected outputs.
-- [`controls.md`](controls.md): control objectives, cadence, and evidence model.
+- [`30-processes.md`](30-processes.md): operational processes and expected outputs.
+- [`40-controls.md`](40-controls.md): control objectives, cadence, and evidence model.
 
 ## Usage pattern
 
