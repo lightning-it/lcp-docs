@@ -6,7 +6,7 @@
   "regexManagers": [
     {
       "description": "Container image tags in ModuLix docs",
-      "fileMatch": ["^ModuLix/.*\\.md$"],
+      "fileMatch": ["^30-modulix/.*\\.md$"],
       "matchStrings": [
         "(?<depName>[a-z0-9.-]+/[a-z0-9._/-]+):(?<currentValue>v?\\d+\\.\\d+\\.\\d+)"
       ],

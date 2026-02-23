@@ -30,16 +30,16 @@ The product page explains what LCP is at a high level. This repository exists to
 
 ## Documentation map
 
-- `ISMS/` - governance and security documentation  
-  Start: [`ISMS/README.md`](ISMS/README.md)
-- `PGF/` - structure and operational reliability documentation  
-  Start: [`PGF/README.md`](PGF/README.md)
-- `ModuLix/` - automation and DevSecOps documentation  
-  Start: [`ModuLix/README.md`](ModuLix/README.md)
+- `10-isms/` - governance and security documentation  
+  Start: [`10-isms/README.md`](10-isms/README.md)
+- `20-pgf/` - structure and operational reliability documentation  
+  Start: [`20-pgf/README.md`](20-pgf/README.md)
+- `30-modulix/` - automation and DevSecOps documentation  
+  Start: [`30-modulix/README.md`](30-modulix/README.md)
 
 ## PGF quick links
 
-- Overview: [`PGF/overview.md`](PGF/overview.md)
-- Requirements: [`PGF/requirements.md`](PGF/requirements.md)
-- Processes: [`PGF/processes.md`](PGF/processes.md)
-- Controls: [`PGF/controls.md`](PGF/controls.md)
+- Overview: [`20-pgf/overview.md`](20-pgf/overview.md)
+- Requirements: [`20-pgf/requirements.md`](20-pgf/requirements.md)
+- Processes: [`20-pgf/processes.md`](20-pgf/processes.md)
+- Controls: [`20-pgf/controls.md`](20-pgf/controls.md)
