@@ -43,13 +43,17 @@ For local `ansible-collection-*` development overlays, see:
 
 ## Secret Input Contract
 
-For all role secret inputs (passwords, tokens, keys):
+For all role secret inputs (passwords, tokens, keys), inventory is the source of truth:
 
-- Required inventory entries must exist; missing required entries should fail fast.
+- Required inventory entries must exist; missing required entries fail fast.
 - If the inventory value is a plain secret value, use it directly.
 - If the inventory value is a backend reference/path, resolve it in inventory via approved lookup plugins.
 - If the referenced secret does not exist, use get-or-create behavior in inventory and use the returned value.
-- Role code should consume resolved effective values only (no backend-specific secret read/write logic in roles).
+- Role code consumes resolved effective values only (no backend-specific secret read/write logic in roles).
+
+For `aap_*` password inputs:
+
+- Set `aap_password_active` (alias) or `aap_password_active_slot` (canonical) to control active slot (`active`/`next`).
 
 ## Knowledge Base
 
