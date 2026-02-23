@@ -1,0 +1,80 @@
+# Linux Workstation
+
+The **Linux Workstation** is a RHEL-based GUI host used for operator/admin
+workflows with XRDP access.
+
+This document covers:
+- how to run Linux Workstation automation with `scripts/ansible-nav`
+- the workstation playbook flow and roles
+- inventory and firewall context for RDP-enabled workstation hosts
+
+---
+
+## Ansible automation (ModuLix)
+
+Linux Workstation automation is orchestrated from the **ModuLix** repository
+(Ansible workspace under `modulix-automation/ansible/`).
+
+Repo (public): https://github.com/lightning-it/modulix-automation
+
+---
+
+## Generic automation reference
+
+Generic Ansible automation guidance is maintained in [`automation.md`](../03-automation.md):
+
+- Runtime wrapper usage and flags: [`automation.md#use-the-runtime-wrapper`](../03-automation.md#use-the-runtime-wrapper)
+- Collection and Execution Environment prerequisites: [`automation.md#install-collections`](../03-automation.md#install-collections)
+- Inventory and roles layout: [`automation.md#inventory-and-roles`](../03-automation.md#inventory-and-roles)
+- Shared secret handling: [`automation.md#secrets`](../03-automation.md#secrets)
+
+---
+
+## Service specification
+
+Service-specific architecture and policy details are documented under
+[`../07-services/03-linux-workstation/`](../07-services/03-linux-workstation/README.md):
+
+- Architecture: [`../07-services/03-linux-workstation/01-architecture.md`](../07-services/03-linux-workstation/01-architecture.md)
+- Requirements: [`../07-services/03-linux-workstation/02-requirements.md`](../07-services/03-linux-workstation/02-requirements.md)
+- Firewall rules: [`../07-services/03-linux-workstation/03-firewall-rules.md`](../07-services/03-linux-workstation/03-firewall-rules.md)
+
+---
+
+## Running the Linux Workstation playbook
+
+### Linux Workstation (VM + RHEL9) setup
+
+```bash
+./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
+  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+
+./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
+  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+
+./scripts/ansible-nav run playbooks/stage-2b/11-workstation.yml \
+  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+```
+
+> Notes:
+> - Adjust `--limit` to your workstation FQDN(s).
+> - Stage-2b playbook targets the `workstations` inventory group.
+> - Use restrictive firewall policy for RDP exposure (prefer mgmt/admin zone only).
+
+---
+
+## Linux Workstation playbook: scope and flow
+
+The workstation playbook configures:
+
+- base repositories
+- host firewall policy (when firewall vars are provided)
+- GUI stack (GNOME/XFCE via role vars)
+- XRDP service for remote administration
+
+### High-level execution order (`playbooks/stage-2b/11-workstation.yml`)
+
+1. `lit.rhel.repos`
+2. `fedora.linux_system_roles.firewall` *(only when `firewall` vars are set)*
+3. `lit.rhel.gui`
+4. `lit.rhel.xrdp`

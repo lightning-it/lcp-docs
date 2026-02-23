@@ -2,56 +2,54 @@
 
 Curated operator and architecture portal for ModuLix in LCP.
 
-## Start here
+## Start Here
 
-- Overview: `overview.md`
-- Architecture: `architecture.md`
-- Getting started: `getting-started.md`
+- `01-overview.md`
+- `02-getting-started.md`
+- `03-automation.md`
+
+## Architecture
+
+- Big picture: `04-architecture/10-big-picture.md`
+- Containers view: `04-architecture/20-containers.md`
+- Services view: `04-architecture/30-services.md`
+- Runbooks view: `04-architecture/40-runbooks.md`
+- Development view: `04-architecture/50-development.md`
+- Troubleshooting view: `04-architecture/60-troubleshooting.md`
+
+## Container Images
+
+- Index: `05-container-images/00-index.md`
+- Toolbox: `05-container-images/10-toolbox.md`
+- Ansible EE: `05-container-images/20-ansible.md`
+- Devtools EE: `05-container-images/30-devtools.md`
 
 ## Runbooks
 
-- Automation workflows: `runbooks/automation.md`
-- `01` Wunderbox: `runbooks/wunderbox.md`
-- `02` AAP: `runbooks/aap.md`
-- `03` Linux Workstation: `runbooks/linux-workstation.md`
-- `04` OCP: `runbooks/ocp.md`
+- Service/platform execution index: `06-runbooks/01-services.md`
+- Wunderbox: `06-runbooks/02-wunderbox.md`
+- AAP: `06-runbooks/03-aap.md`
+- Linux Workstation: `06-runbooks/04-linux-workstation.md`
+- OCP: `06-runbooks/05-ocp.md`
 
 ## Service Specifications
 
-- `01` Wunderbox service index: `services/wunderbox/README.md`
-- `01` Wunderbox architecture: `services/wunderbox/architecture.md`
-- `01` Wunderbox requirements: `services/wunderbox/requirements.md`
-- `01` Wunderbox firewall rules: `services/wunderbox/firewall-rules.md`
-- `02` AAP service index: `services/aap/README.md`
-- `02` AAP architecture: `services/aap/architecture.md`
-- `02` AAP requirements: `services/aap/requirements.md`
-- `02` AAP firewall rules: `services/aap/firewall-rules.md`
-- `03` Linux Workstation service index: `services/linux-workstation/README.md`
-- `03` Linux Workstation architecture: `services/linux-workstation/architecture.md`
-- `03` Linux Workstation requirements: `services/linux-workstation/requirements.md`
-- `03` Linux Workstation firewall rules: `services/linux-workstation/firewall-rules.md`
-- `04` OCP service index: `services/ocp/README.md`
-- `04` OCP architecture: `services/ocp/architecture.md`
-- `04` OCP requirements: `services/ocp/requirements.md`
-- `04` OCP firewall rules: `services/ocp/firewall-rules.md`
-
-## Troubleshooting
-
-- Common failures: `troubleshooting/common-failures.md`
+- Wunderbox index: `07-services/01-wunderbox/README.md`
+- AAP index: `07-services/02-aap/README.md`
+- Linux Workstation index: `07-services/03-linux-workstation/README.md`
+- OCP index: `07-services/04-ocp/README.md`
 
 ## Development
 
-- Local overlays and extension patterns: `development/local-overlays.md`
-- Devtools container usage (pre-commit, lint/test): `development/devtools-container.md`
+- Collection development: `08-development/01-ansible-collection-development.md`
+- Devtools container usage: `08-development/02-devtools-container.md`
+- Local overlays: `08-development/03-local-overlays.md`
 
-## Canonical runtime contract (release-coupled)
+## Troubleshooting
 
-Canonical runtime flags and behavior are maintained in the automation repo:
+- Common failures: `09-troubleshooting/01-common-failures.md`
+
+## Canonical Runtime Contract
 
 - `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
 - `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
-
-For release-specific behavior, use tagged links:
-`https://github.com/lightning-it/modulix-automation/blob/<tag>/docs/runtime-contract.md`.
-
-Treat these files as source-of-truth for executable behavior.
