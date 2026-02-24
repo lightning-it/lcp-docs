@@ -13,6 +13,10 @@ and operate a service, independent from technology details.
 4. Validate outcomes and record evidence.
 5. Document follow-up, rollback, or troubleshooting actions.
 
+Inventory is always environment-specific and is not delivered as a single
+generic ModuLix baseline. Each platform team must model its own infrastructure,
+grouping, and runtime input references in inventory.
+
 ## Service runbook map
 
 - Wunderbox: `10-wunderbox.md` (spec: `../20-services/10-wunderbox/00-index.md`)

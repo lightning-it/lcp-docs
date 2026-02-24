@@ -183,7 +183,7 @@ Some typical ModuLix components (examples):
 
 - Demos are standardized under domains like `*.demo.dev.l-it.io` (or equivalent):
   - based on reproducible blueprints,
-  - ideal for showcasing concrete platform scenarios to customers or stakeholders.
+  - ideal for showcasing concrete platform scenarios to platform teams or stakeholders.
 
 ---
 
@@ -208,7 +208,7 @@ If you want to:
 
 - contribute your own components,
 - experiment with new blueprints,
-- or roll out ModuLix in a concrete customer environment,
+- or roll out ModuLix in a concrete platform environment,
 
 reach out to us or open an issue / discussion in the repo.
 

@@ -28,6 +28,21 @@ Use this file (`03-automation.md`) for generic runtime behavior only (wrapper, c
 ./scripts/ansible-nav run <playbook.yml> -i inventories/<env>/inventory.yml --limit <host-or-group>
 ```
 
+### Runtime input prerequisites
+
+Depending on playbook and target environment:
+
+- automation baseline content (playbooks, requirements, and configuration),
+  provided either by the toolbox image (`modulix-scripts` runtime payload) or by
+  a local workspace in engineering/source-based workflows
+- inventory (`-i inventories/<env>/inventory.yml`)
+- inventory ownership: this is environment-specific and not shipped as a universal
+  ModuLix baseline
+- inventory must represent real infrastructure and operating context (host/group
+  model, network segmentation, access paths, and runtime input references)
+- SSH access (key material and/or ssh-agent)
+- secret inputs (Vault token, vault password file, other runtime secrets)
+
 ### Install collections
 
 Default runtime installs come from the configured execution environment and the
