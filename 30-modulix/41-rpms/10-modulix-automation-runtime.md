@@ -1,6 +1,6 @@
-# modulix-scripts RPM
+# modulix-automation-runtime RPM
 
-`modulix-scripts` is the delivery artifact for the ModuLix automation runtime.
+`modulix-automation-runtime` is the delivery artifact for the ModuLix automation runtime.
 
 The source of truth is the `modulix-automation` repository, where the scripts,
 runtime contract, and RPM packaging are maintained.
@@ -32,18 +32,18 @@ Primary repository:
 
 Relevant docs in that repository:
 
-- `README.md` (delivery model: `modulix-scripts` RPM)
+- `README.md` (delivery model: `modulix-automation-runtime` RPM)
 - `packaging/rpm/README.md` (build/publish flow)
 - `docs/runtime-contract.md` (operator runtime contract)
 
 ## Where it is used
 
 - Operator execution path via `scripts/ansible-nav`
-- Toolbox image stack where `modulix-scripts` is installed as an RPM
+- Toolbox image stack where `modulix-automation-runtime` is installed as an RPM
 
 ## Operational note
 
-Treat `modulix-scripts` version updates as runtime changes:
+Treat `modulix-automation-runtime` version updates as runtime changes:
 
 1. review release notes/changelog impact
 2. validate critical runbooks (`30-runbooks/*`) in target environment

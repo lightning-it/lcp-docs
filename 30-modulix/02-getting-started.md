@@ -23,8 +23,14 @@ Current defaults:
 
 Use the same wrapper workflow. No host-native `ansible-navigator` installation is required.
 Container-only means runtime/tooling is containerized and the automation baseline
-is provided by the toolbox image (`modulix-scripts` runtime payload). Operators
+is provided by the toolbox image (`modulix-automation-runtime` runtime payload). Operators
 provide environment-specific inventory mapping, SSH material, and runtime secrets.
+
+For RPM baseline execution (`/opt/modulix/ansible`), collection bootstrap is
+offline-safe by default (`ANSIBLE_TOOLBOX_AUTO_COLLECTIONS=false`). This means
+required collections are expected to be pre-installed in the runtime/EE images.
+In disconnected environments, ensure the run EE image and required collections
+are already available before execution.
 
 For runtime details, flags, and support scope:
 

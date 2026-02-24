@@ -1,11 +1,11 @@
-# modulix-scripts RPM Development
+# modulix-automation-runtime RPM Development
 
 This guideline describes how ModuLix runtime scripts are packaged and released
-as the `modulix-scripts` RPM.
+as the `modulix-automation-runtime` RPM.
 
 ## Why this matters
 
-- `modulix-scripts` is the delivery artifact for ModuLix runtime tooling.
+- `modulix-automation-runtime` is the delivery artifact for ModuLix runtime tooling.
 - It provides stable wrapper commands such as `ansible-nav`.
 - It enables controlled rollout through standard RPM channels.
 
@@ -24,5 +24,5 @@ as the `modulix-scripts` RPM.
 
 ## Related operator docs
 
-- Runtime artifact overview: `../../41-rpms/10-modulix-scripts.md`
+- Runtime artifact overview: `../../41-rpms/10-modulix-automation-runtime.md`
 - Patch governance and Renovate flow: `../../05-patching.md`

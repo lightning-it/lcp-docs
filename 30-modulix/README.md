@@ -74,7 +74,7 @@ RPM docs describe packaged runtime artifacts and their operational role in the
 ModuLix delivery model.
 
 - Index: `41-rpms/00-index.md`
-- modulix-scripts RPM: `41-rpms/10-modulix-scripts.md`
+- modulix-automation-runtime RPM: `41-rpms/10-modulix-automation-runtime.md`
 
 ## Ansible Collections
 

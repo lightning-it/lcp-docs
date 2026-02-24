@@ -33,7 +33,7 @@ Use this file (`03-automation.md`) for generic runtime behavior only (wrapper, c
 Depending on playbook and target environment:
 
 - automation baseline content (playbooks, requirements, and configuration),
-  provided either by the toolbox image (`modulix-scripts` runtime payload) or by
+  provided either by the toolbox image (`modulix-automation-runtime` runtime payload) or by
   a local workspace in engineering/source-based workflows
 - inventory (`-i inventories/<env>/inventory.yml`)
 - inventory ownership: this is environment-specific and not shipped as a universal
@@ -47,6 +47,12 @@ Depending on playbook and target environment:
 
 Default runtime installs come from the configured execution environment and the
 `scripts/ansible-nav` preflight behavior.
+
+In RPM baseline/container-in mode (`/opt/modulix/ansible`), `ansible-nav-local`
+defaults to `ANSIBLE_TOOLBOX_AUTO_COLLECTIONS=false` (offline-safe). Required
+collections are expected to be pre-installed in the runtime and run EE images.
+Enable collection bootstrap only when intentionally refreshing from a connected
+source (`ANSIBLE_TOOLBOX_AUTO_COLLECTIONS=true`).
 
 For local `ansible-collection-*` development overlays, see:
 `50-development/01-ansible-collections/10-ansible-collection-development.md`.

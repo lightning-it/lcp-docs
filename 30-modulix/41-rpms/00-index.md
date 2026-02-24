@@ -1,3 +1,3 @@
 # RPMs Index
 
-- `10-modulix-scripts.md` - delivery RPM for ModuLix runtime scripts
+- `10-modulix-automation-runtime.md` - delivery RPM for ModuLix runtime scripts

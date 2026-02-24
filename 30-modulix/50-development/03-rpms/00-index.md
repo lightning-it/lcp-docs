@@ -1,3 +1,3 @@
 # RPM Development Index
 
-- modulix-scripts RPM workflow: `10-modulix-scripts-rpm.md`
+- modulix-automation-runtime RPM workflow: `10-modulix-automation-runtime-rpm.md`
