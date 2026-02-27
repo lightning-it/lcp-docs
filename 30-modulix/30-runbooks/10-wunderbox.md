@@ -56,6 +56,22 @@ ansible-navigator run playbooks/stage-2b/12-wunderbox.yml \
   -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
 ```
 
+### Split service playbooks
+
+```bash
+# VMware provisioning only (VM/template + SSH wait)
+ansible-navigator run playbooks/services/10-wunderbox-vmware-provision.yml \
+  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+
+# OS baseline only
+ansible-navigator run playbooks/services/11-wunderbox-os-base.yml \
+  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+
+# Wunderbox service stack
+ansible-navigator run playbooks/services/12-wunderbox-service-stack.yml \
+  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+```
+
 > Notes:
 > - Adjust `--limit` to your Wunderbox FQDN(s).
 > - Ensure the configured EE image contains required collections.
