@@ -59,7 +59,7 @@ See `03-automation.md` (`Runtime input prerequisites`).
 Use the devtools container for repository tooling (`pre-commit`, `ansible-lint`,
 Molecule, actionlint) without installing all tools on the host.
 
-- image: `quay.io/l-it/ee-wunder-devtools-ubi9:v1.6.0`
+- image: `quay.io/l-it/ee-wunder-devtools-ubi9:v1.7.1`
 - guide: `50-development/02-containers/10-devtools-container.md`
 
 Keep playbook execution on `./scripts/ansible-nav` (runtime wrapper path).
