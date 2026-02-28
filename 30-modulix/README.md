@@ -97,6 +97,7 @@ tooling, and RPM-related maintenance.
 - Containers guidelines: `50-development/02-containers/00-index.md`
 - RPM guidelines: `50-development/03-rpms/00-index.md`
 - Devtools container usage: `50-development/02-containers/10-devtools-container.md`
+- Local ModuLix runtime containers (build + start): `50-development/02-containers/20-local-modulix-runtime.md`
 
 ## Troubleshooting
 

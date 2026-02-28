@@ -53,6 +53,7 @@ See `03-automation.md` (`Runtime input prerequisites`).
 - `30-runbooks/30-linux-workstation.md` (`30-linux-workstation`)
 - `30-runbooks/40-ocp.md` (`40-ocp`)
 - `50-development/02-containers/10-devtools-container.md` (for lint/test tooling in container)
+- `50-development/02-containers/20-local-modulix-runtime.md` (for local runtime image build/start)
 
 ## 5) Use the DevOps container for checks
 
