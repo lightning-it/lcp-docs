@@ -4,7 +4,7 @@
 
 Current default firewall policy for Wunderbox hosts is defined in:
 
-- `ansible-inventory-lit/inventories/corp/group_vars/wunderboxes/firewall.yml`
+- `ansible-inventory/inventories/<inventory-name>/group_vars/wunderboxes/firewall.yml`
 
 ## Baseline rule set (current inventory defaults)
 

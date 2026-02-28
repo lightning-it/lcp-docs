@@ -38,8 +38,11 @@ Relevant docs in that repository:
 
 ## Where it is used
 
-- Operator execution path via `scripts/ansible-nav`
+- Direct stage/playbook execution path via `scripts/ansible-nav`
 - Toolbox image stack where `modulix-automation-runtime` is installed as an RPM
+
+Service-oriented operator entry (`modulix-launcher`) is maintained and packaged
+separately.
 
 ## Operational note
 

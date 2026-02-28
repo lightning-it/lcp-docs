@@ -4,6 +4,18 @@ Use the devtools execution environment for repository checks (for example
 `pre-commit`, `ansible-lint`, Molecule, actionlint) without installing those
 tools on the host.
 
+## Security Scope (Required)
+
+This workflow mounts the host Podman socket and disables SELinux labeling for
+the container runtime path. Treat it as high-trust local developer workflow.
+
+- Use only on trusted developer workstations.
+- Do not use on production hosts, shared jump hosts, or regulated operator
+  endpoints.
+- Do not run this workflow against untrusted repositories/PRs.
+- The mounted Podman socket allows container operations with host-user scope
+  and can be abused for privilege expansion on the host.
+
 ## Run pre-commit in the devtools container
 
 ```bash
@@ -33,6 +45,10 @@ podman run --rm -it \
 
 ## Notes
 
-- The Podman socket mount is required for hooks that run nested containers.
+- The Podman socket mount is required for hooks that run nested containers and
+  is the main security-sensitive part of this setup.
+- `--security-opt label=disable` is required for this mount model; apply only
+  in the trusted local-dev scope described above.
 - Keep runtime automation execution separate: run playbooks through the
-  Ansible runtime workflow (`scripts/ansible-nav` in `modulix-automation/ansible`).
+  Ansible runtime workflow (`modulix-launcher` for service runs;
+  `scripts/ansible-nav` in `modulix-automation/ansible` for direct stage/playbook runs).

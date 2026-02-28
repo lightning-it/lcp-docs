@@ -28,7 +28,7 @@ High-level role order in `13-aap.yml`:
 ## Integration points
 
 - Inventory group: `aaps`
-- Host/group vars: `ansible-inventory-lit/inventories/corp/...`
+- Host/group vars: `ansible-inventory/inventories/<inventory-name>/...`
 - AAP secret inputs are inventory-first:
   - literal password values are accepted
   - HCP Vault path values are resolved (and created when missing)

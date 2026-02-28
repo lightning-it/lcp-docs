@@ -2,7 +2,7 @@
 
 ModuLix is organized around one execution contract and multiple documentation layers:
 
-1. Runtime contract (`scripts/ansible-nav`) in `modulix-automation`
+1. Runtime contract (`modulix-launcher` + `scripts/ansible-nav`)
 2. Execution containers (toolbox + ansible EE + devtools EE)
 3. LIT Ansible collections (`lit.foundational`, `lit.rhel`, `lit.supplementary`, `lit.ocp`)
 4. Technology service specifications and build playbooks

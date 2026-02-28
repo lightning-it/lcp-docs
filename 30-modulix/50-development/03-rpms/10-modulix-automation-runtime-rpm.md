@@ -7,6 +7,7 @@ as the `modulix-automation-runtime` RPM.
 
 - `modulix-automation-runtime` is the delivery artifact for ModuLix runtime tooling.
 - It provides stable wrapper commands such as `ansible-nav`.
+- `modulix-launcher` is packaged separately and consumes this runtime payload.
 - It enables controlled rollout through standard RPM channels.
 
 ## Source of truth

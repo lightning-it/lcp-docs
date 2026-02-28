@@ -4,8 +4,8 @@
 
 Current firewall behavior for workstation hosts is composed from:
 
-- `ansible-inventory-lit/inventories/corp/group_vars/all/firewall.yml`
-- `ansible-inventory-lit/inventories/corp/group_vars/workstations/xrdp.yml`
+- `ansible-inventory/inventories/<inventory-name>/group_vars/all/firewall.yml`
+- `ansible-inventory/inventories/<inventory-name>/group_vars/workstations/xrdp.yml`
 
 ## Baseline rule set (current inventory defaults)
 

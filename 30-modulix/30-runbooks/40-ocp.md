@@ -25,8 +25,8 @@ Generic Ansible automation guidance is maintained in [`automation.md`](../03-aut
 
 - Runtime wrapper usage and flags: [`automation.md#use-the-runtime-wrapper`](../03-automation.md#use-the-runtime-wrapper)
 - Collection and Execution Environment prerequisites: [`automation.md#install-collections`](../03-automation.md#install-collections)
-- Inventory and roles layout: [`automation.md#inventory-and-roles`](../03-automation.md#inventory-and-roles)
-- Shared secret handling: [`automation.md#secrets`](../03-automation.md#secrets)
+- Runtime input prerequisites: [`automation.md#runtime-input-prerequisites`](../03-automation.md#runtime-input-prerequisites)
+- Shared secret handling: [`automation.md#secret-input-contract`](../03-automation.md#secret-input-contract)
 
 ---
 
@@ -45,13 +45,13 @@ Service-specific architecture and policy details are documented under
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-2c/container-platform-ocp4/prepare-ee.yml \
-  -i inventories/<env>/inventory.yml
+  -i inventories/<inventory-name>/inventory.yml
 
 ./scripts/ansible-nav run playbooks/stage-2c/container-platform-ocp4/20-ocp-install.yml \
-  -i inventories/<env>/inventory.yml --limit <ocp-host-or-group>
+  -i inventories/<inventory-name>/inventory.yml --limit <ocp-host-or-group>
 
 ./scripts/ansible-nav run playbooks/stage-2c/container-platform-ocp4/21-post-install.yml \
-  -i inventories/<env>/inventory.yml
+  -i inventories/<inventory-name>/inventory.yml
 ```
 
 > Notes:

@@ -23,8 +23,8 @@ High-level role order in `11-workstation.yml`:
 ## Integration points
 
 - Inventory group: `workstations`
-- Group vars: `ansible-inventory-lit/inventories/corp/group_vars/workstations/`
-- Host vars: `ansible-inventory-lit/inventories/corp/host_vars/workstation*.yml`
+- Group vars: `ansible-inventory/inventories/<inventory-name>/group_vars/workstations/`
+- Host vars: `ansible-inventory/inventories/<inventory-name>/host_vars/workstation*.yml`
 - XRDP policy and zone behavior are documented in [`30-firewall-rules.md`](30-firewall-rules.md)
 
 ## Boundaries
