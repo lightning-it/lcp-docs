@@ -3,7 +3,8 @@
 The **Wunderbox** is a RHEL-based “core services” VM (no GUI) that provides internal platform services and stable internal endpoints. It is designed to bootstrap and host foundational services required by other components (e.g., OpenShift installs, automation pipelines, internal developer tooling).
 
 This document covers:
-- how to run the Wunderbox automation with **ansible-navigator** and the **Wunder devtools execution environment**
+- how to run the Wunderbox automation with **modulix-launcher** (recommended)
+  and direct stage playbooks (`scripts/ansible-nav`) when needed
 - the Wunderbox playbook flow and **all roles** it invokes
 - Vault + MinIO + Nexus integration and tfstate migration (role-internal)
 - inventory and secrets handling
@@ -13,7 +14,9 @@ This document covers:
 ## Ansible automation (ModuLix)
 
 Wunderbox automation is orchestrated from the **ModuLix** repository (Ansible workspace under `modulix-automation/ansible/`).  
-The ModuLix workspace uses **ansible-navigator** with the **Wunder devtools execution environment** to avoid local tooling dependencies.
+Runtime execution uses containerized toolbox/run-EE flows; no host-native
+`ansible-navigator` install is required. The operator entry point for service
+workflows is `modulix-launcher`.
 
 Repo (public): https://github.com/lightning-it/modulix-automation
 
@@ -25,8 +28,8 @@ Generic Ansible automation guidance is maintained in [`automation.md`](../03-aut
 
 - Runtime wrapper usage and flags: [`automation.md#use-the-runtime-wrapper`](../03-automation.md#use-the-runtime-wrapper)
 - Collection and Execution Environment prerequisites: [`automation.md#install-collections`](../03-automation.md#install-collections)
-- Inventory and roles layout: [`automation.md#inventory-and-roles`](../03-automation.md#inventory-and-roles)
-- Shared secret handling: [`automation.md#secrets`](../03-automation.md#secrets)
+- Runtime input prerequisites: [`automation.md#runtime-input-prerequisites`](../03-automation.md#runtime-input-prerequisites)
+- Shared secret handling: [`automation.md#secret-input-contract`](../03-automation.md#secret-input-contract)
 
 ---
 
@@ -43,33 +46,49 @@ Service-specific architecture and policy details are documented under
 
 ## Running the Wunderbox playbook
 
-### Wunderbox (VM + RHEL9) setup
+### Recommended: launcher service flow
 
 ```bash
-ansible-navigator run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
-
-ansible-navigator run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
-
-ansible-navigator run playbooks/stage-2b/12-wunderbox.yml \
-  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
+  services wunderbox -i inventories/<inventory-name>/inventory.yml \
+  --limit <wunderbox-host-fqdn>
 ```
 
-### Split service playbooks
+```bash
+modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
+  services wunderbox --rebuild -i inventories/<inventory-name>/inventory.yml \
+  --limit <wunderbox-host-fqdn>
+```
+
+### Direct stage playbooks (advanced / stage-specific)
+
+#### Wunderbox (VM + RHEL9) setup
+
+```bash
+./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+
+./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+
+./scripts/ansible-nav run playbooks/stage-2b/12-wunderbox.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+```
+
+#### Split service playbooks
 
 ```bash
 # VMware provisioning only (VM/template + SSH wait)
-ansible-navigator run playbooks/services/10-wunderbox-vmware-provision.yml \
-  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+./scripts/ansible-nav run playbooks/services/10-wunderbox-vmware-provision.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
 
 # OS baseline only
-ansible-navigator run playbooks/services/11-wunderbox-os-base.yml \
-  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+./scripts/ansible-nav run playbooks/services/11-wunderbox-os-base.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
 
 # Wunderbox service stack
-ansible-navigator run playbooks/services/12-wunderbox-service-stack.yml \
-  -i inventories/corp/inventory.yml --limit wunderbox01.prd.dmz.corp.l-it.io
+./scripts/ansible-nav run playbooks/services/12-wunderbox-service-stack.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
 ```
 
 > Notes:

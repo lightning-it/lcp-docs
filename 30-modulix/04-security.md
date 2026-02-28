@@ -10,7 +10,7 @@ still depends on organizational controls and audit evidence outside this repo.
 
 ModuLix security is designed around:
 
-- predictable automation (`scripts/ansible-nav` as runtime contract)
+- predictable automation (`modulix-launcher`/`scripts/ansible-nav` as runtime contract)
 - controlled secret handling (inventory-driven, no ad-hoc secret logic in roles)
 - traceable changes (Git-based configuration and review process)
 - safe defaults (explicit validation and fail-fast behavior)
@@ -62,7 +62,8 @@ Organizational responsibilities:
 
 ## 5) Practical operating rules
 
-- Use `scripts/ansible-nav` for execution; do not bypass with ad-hoc runtime paths.
+- Use the standard runtime entry points (`modulix-launcher` and `scripts/ansible-nav`);
+  do not bypass with ad-hoc runtime paths.
 - Keep secrets in approved secret backends or controlled inventory lookups.
 - Enforce peer review for changes affecting credentials, auth, network, or RBAC.
 - Keep certificate validation enabled by default; document exceptions explicitly.

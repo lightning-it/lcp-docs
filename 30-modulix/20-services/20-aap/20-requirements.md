@@ -12,7 +12,9 @@
 
 ## Automation prerequisites
 
-- Execute through `./scripts/ansible-nav` (see `../../03-automation.md`).
+- Preferred: execute through `modulix-launcher` service mode
+  (see `../../03-automation.md`).
+- Use `./scripts/ansible-nav` for direct stage/playbook runs.
 - Inventory must include target hosts in group `aaps`.
 - Execution Environment image must provide required collections.
 
@@ -24,7 +26,9 @@
   - HCP Vault path reference
 - For HCP Vault path reference mode:
   - read existing secret/key
-  - if missing, create secret/key and use it
+  - in non-production bootstrap scope, create secret/key when missing
+  - in production/day-2 scope, fail if missing and escalate to secret owner
+  - log every create action with ticket/reference, actor, environment, and path
 - Do not commit plaintext secrets.
 
 ## Networking and firewall

@@ -8,7 +8,9 @@
 ## SSH authentication failures
 
 - Symptom: permission denied / no key loaded
-- Check `SSH_AUTH_SOCK`, mounted `~/.ssh`, and key presence in agent.
+- Check `SSH_AUTH_SOCK` and key presence in agent (`ssh-add -L`).
+- `modulix-launcher` forwards the SSH agent socket; it does not require a
+  host `~/.ssh` bind mount by default.
 
 ## Collection/module not found
 

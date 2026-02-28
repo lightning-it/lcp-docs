@@ -15,4 +15,4 @@ Execution Environment image used to run Ansible playbooks and collections for Mo
 ## Notes
 
 - Contains Ansible runtime and collection dependencies required for playbook execution.
-- Used by the runtime wrapper during `ansible-nav run` flows.
+- Used by the runtime wrapper during `modulix-launcher` and `ansible-nav run` flows.

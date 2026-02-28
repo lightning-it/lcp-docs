@@ -14,5 +14,6 @@ Runtime wrapper container used to launch ModuLix automation commands and orchest
 
 ## Notes
 
-- Provides the wrapper runtime used by `scripts/ansible-nav`.
+- Provides the wrapper runtime used by `modulix-launcher` and
+  `scripts/ansible-nav`.
 - Intended to be the operator-facing entry container.

@@ -12,13 +12,19 @@ This guide covers development workflows for local `ansible-collection-*` reposit
 Normal runtime path:
 
 ```bash
+modulix-launcher --inventory-dir <inventories-root> services <wunderbox|aap> \
+  -i inventories/<inventory-name>/inventory.yml --limit <host-or-group>
+```
+
+```bash
 ./scripts/ansible-nav run <playbook.yml> -i <inventory.yml> --limit <host-or-group>
 ```
 
 For this path, do not run local overlay install by default:
 
 - Collections come from the configured EE image.
-- For AAP runs, RH collection preflight is handled by `scripts/ansible-nav`.
+- For direct stage/playbook runs, RH collection preflight is handled by
+  `scripts/ansible-nav`.
 
 Use local overlay installs only when you are actively developing local collection code and need those changes in `collections-dev`.
 

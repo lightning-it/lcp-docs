@@ -4,7 +4,7 @@
 
 Current default firewall policy for AAP hosts is defined in:
 
-- `ansible-inventory-lit/inventories/corp/group_vars/aaps/firewall.yml`
+- `ansible-inventory/inventories/<inventory-name>/group_vars/aaps/firewall.yml`
 
 ## Baseline rule set (current inventory defaults)
 

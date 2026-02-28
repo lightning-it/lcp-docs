@@ -75,6 +75,7 @@ ModuLix delivery model.
 
 - Index: `41-rpms/00-index.md`
 - modulix-automation-runtime RPM: `41-rpms/10-modulix-automation-runtime.md`
+- modulix-launcher RPM: `41-rpms/20-modulix-launcher.md`
 
 ## Ansible Collections
 
@@ -98,6 +99,8 @@ tooling, and RPM-related maintenance.
 - RPM guidelines: `50-development/03-rpms/00-index.md`
 - Devtools container usage: `50-development/02-containers/10-devtools-container.md`
 - Local ModuLix runtime containers (build + start): `50-development/02-containers/20-local-modulix-runtime.md`
+- modulix-automation-runtime RPM development: `50-development/03-rpms/10-modulix-automation-runtime-rpm.md`
+- modulix-launcher RPM development: `50-development/03-rpms/20-modulix-launcher-rpm.md`
 
 ## Troubleshooting
 
@@ -114,3 +117,4 @@ behavior, defaults, and support scope.
 
 - `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
 - `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
+- `https://github.com/lightning-it/modulix-launcher/blob/main/README.md`

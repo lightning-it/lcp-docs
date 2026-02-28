@@ -16,37 +16,53 @@ configuration-as-code, and day-2 operations.
 
 ## Running the AAP playbooks
 
-### AAP (VM + RHEL9) setup
+### Recommended: launcher service flow
+
+```bash
+modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
+  services aap -i inventories/<inventory-name>/inventory.yml \
+  --limit <aap-host-fqdn>
+```
+
+```bash
+modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
+  services aap --rebuild -i inventories/<inventory-name>/inventory.yml \
+  --limit <aap-host-fqdn>
+```
+
+### Direct stage playbooks (advanced / stage-specific)
+
+#### AAP (VM + RHEL9) setup
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
 
 ./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
 
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
 ```
 
-### AAP rebuild (single pipeline playbook)
+#### AAP rebuild (single pipeline playbook)
 
 ```bash
 ./scripts/ansible-nav run playbooks/services/02-aap-rebuild.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
 ```
 
-### Run only specific AAP phases
+#### Run only specific AAP phases
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io -t aap_deploy
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn> -t aap_deploy
 
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io -t aap_cac
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn> -t aap_cac
 
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/corp/inventory.yml --limit aap01.prd.dmz.corp.l-it.io \
+  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn> \
   -t aap_ops -e aap_ops_action=status
 ```
 
@@ -57,4 +73,7 @@ configuration-as-code, and day-2 operations.
 - Missing required inventory entries should fail.
 - If an entry is a literal password, use it directly.
 - If an entry is an HCP Vault path reference, resolve from HCP Vault.
-- If referenced HCP Vault secret/key is missing, create it and then use it.
+- If referenced HCP Vault secret/key is missing:
+  non-production bootstrap may create it, production/day-2 must fail and escalate.
+- Record every auto-created secret with change ticket, actor, environment, and
+  Vault path for audit traceability.

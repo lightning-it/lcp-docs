@@ -25,8 +25,8 @@ Generic Ansible automation guidance is maintained in [`automation.md`](../03-aut
 
 - Runtime wrapper usage and flags: [`automation.md#use-the-runtime-wrapper`](../03-automation.md#use-the-runtime-wrapper)
 - Collection and Execution Environment prerequisites: [`automation.md#install-collections`](../03-automation.md#install-collections)
-- Inventory and roles layout: [`automation.md#inventory-and-roles`](../03-automation.md#inventory-and-roles)
-- Shared secret handling: [`automation.md#secrets`](../03-automation.md#secrets)
+- Runtime input prerequisites: [`automation.md#runtime-input-prerequisites`](../03-automation.md#runtime-input-prerequisites)
+- Shared secret handling: [`automation.md#secret-input-contract`](../03-automation.md#secret-input-contract)
 
 ---
 
@@ -47,13 +47,13 @@ Service-specific architecture and policy details are documented under
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <workstation-host-fqdn>
 
 ./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <workstation-host-fqdn>
 
 ./scripts/ansible-nav run playbooks/stage-2b/11-workstation.yml \
-  -i inventories/corp/inventory.yml --limit workstation01.prd.dmz.corp.l-it.io
+  -i inventories/<inventory-name>/inventory.yml --limit <workstation-host-fqdn>
 ```
 
 > Notes:

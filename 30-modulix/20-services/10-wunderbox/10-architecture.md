@@ -33,7 +33,7 @@ High-level role order in `12-wunderbox.yml`:
 ## Integration points
 
 - Inventory group: `wunderboxes`
-- Host vars and group vars: `ansible-inventory-lit/inventories/corp/...`
+- Host vars and group vars: `ansible-inventory/inventories/<inventory-name>/...`
 - Vault is used as secret control-plane for downstream service integrations
 - Default service ingress policy is documented in [`30-firewall-rules.md`](30-firewall-rules.md)
 

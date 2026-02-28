@@ -5,7 +5,7 @@
 | Area | Requirement | Source |
 | --- | --- | --- |
 | Host profile | RHEL 9 workstation VM with GUI | `../../30-runbooks/30-linux-workstation.md` |
-| Target inventory group | `workstations` | `ansible-inventory-lit/inventories/corp/inventory.yml` |
+| Target inventory group | `workstations` | `ansible-inventory/inventories/<inventory-name>/inventory.yml` |
 | Execution mode | Execution Environment with required collections | `../../03-automation.md` |
 | GUI role | `lit.rhel.gui` | `modulix-automation/ansible/playbooks/stage-2b/11-workstation.yml` |
 | XRDP role | `lit.rhel.xrdp` | `modulix-automation/ansible/playbooks/stage-2b/11-workstation.yml` |

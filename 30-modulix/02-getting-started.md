@@ -1,13 +1,16 @@
 # Getting Started
 
-## 1) Run with the default runtime wrapper
+## 1) Run with `modulix-launcher` (service workflows)
 
-Run ModuLix playbooks via the wrapper:
+Run ModuLix service workflows via the launcher:
 
 ```bash
-cd /path/to/<example-repo>/ansible
-./scripts/ansible-nav run playbooks/<stage-or-service>/<playbook>.yml \
-  -i inventories/<env>/inventory.yml --limit <host-or-group>
+export NEW_ROOT="${NEW_ROOT:-$HOME/sources/lit/NEW}"
+export INVENTORY_DIR="$NEW_ROOT/ansible-inventory-lit/inventories"
+
+modulix-launcher --inventory-dir "$INVENTORY_DIR" \
+  services <wunderbox|aap> \
+  -i inventories/<inventory-name>/inventory.yml --limit <host-or-group>
 ```
 
 Inventory is environment-specific and maintained by the platform team.
@@ -16,10 +19,22 @@ and runtime access model.
 
 Current defaults:
 
-- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.6.1`
-- run EE image: `quay.io/l-it/ee-wunder-ansible-ubi9:v1.12.1`
+- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.7.2`
+- run EE image: `quay.io/l-it/ee-wunder-ansible-ubi9-certified:v1.11.6`
 
-## 2) Container-only mode (no GitHub access)
+## 2) Run direct playbooks (stage-focused workflows)
+
+Use `scripts/ansible-nav` when you need direct stage playbook execution
+(for example stage-1/stage-2a/stage-2c).
+
+```bash
+export NEW_ROOT="${NEW_ROOT:-$HOME/sources/lit/NEW}"
+cd "$NEW_ROOT/modulix-automation/ansible"
+./scripts/ansible-nav run playbooks/<stage-or-service>/<playbook>.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <host-or-group>
+```
+
+## 3) Container-only mode (no GitHub access)
 
 Use the same wrapper workflow. No host-native `ansible-navigator` installation is required.
 Container-only means runtime/tooling is containerized and the automation baseline
@@ -34,15 +49,15 @@ are already available before execution.
 
 For runtime details, flags, and support scope:
 
-- `<example-repo>/ansible/README.md`
-- `<example-repo>/docs/runtime-contract.md`
-- `<example-repo>/docs/support-matrix.md`
+- `https://github.com/lightning-it/modulix-launcher/blob/main/README.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/runtime-contract.md`
+- `https://github.com/lightning-it/modulix-automation/blob/main/docs/support-matrix.md`
 
-## 3) Runtime input prerequisites
+## 4) Runtime input prerequisites
 
 See `03-automation.md` (`Runtime input prerequisites`).
 
-## 4) Use runbooks and references
+## 5) Use runbooks and references
 
 - `03-automation.md`
 - `04-security.md`
@@ -55,7 +70,7 @@ See `03-automation.md` (`Runtime input prerequisites`).
 - `50-development/02-containers/10-devtools-container.md` (for lint/test tooling in container)
 - `50-development/02-containers/20-local-modulix-runtime.md` (for local runtime image build/start)
 
-## 5) Use the DevOps container for checks
+## 6) Use the DevOps container for checks
 
 Use the devtools container for repository tooling (`pre-commit`, `ansible-lint`,
 Molecule, actionlint) without installing all tools on the host.
@@ -63,4 +78,5 @@ Molecule, actionlint) without installing all tools on the host.
 - image: `quay.io/l-it/ee-wunder-devtools-ubi9:v1.7.1`
 - guide: `50-development/02-containers/10-devtools-container.md`
 
-Keep playbook execution on `./scripts/ansible-nav` (runtime wrapper path).
+For service operations, use `modulix-launcher`.
+For direct stage/playbook workflows, use `./scripts/ansible-nav`.

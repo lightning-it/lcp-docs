@@ -39,7 +39,7 @@ Examples from current repositories:
 
 | Domain | Typical artifacts | Managed by |
 | --- | --- | --- |
-| Automation runtime | `scripts/ansible-nav`, runtime contract image tags | Renovate PRs + operator review |
+| Automation runtime | `modulix-launcher`, `scripts/ansible-nav`, runtime contract image tags | Renovate PRs + operator review |
 | Ansible collections | `galaxy.yml`, collection constraints | Renovate PRs + compatibility checks |
 | Container build inputs | Dockerfile/Containerfile args, pip requirements | Renovate PRs + image build/test |
 | Documentation references | image tags in docs | Renovate PRs + doc review |
