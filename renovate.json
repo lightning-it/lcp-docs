@@ -2,11 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended", ":dependencyDashboard"],
   "labels": ["dependencies", "renovate", "docs"],
-  "enabledManagers": ["regex"],
-  "regexManagers": [
+  "enabledManagers": ["custom.regex"],
+  "customManagers": [
     {
+      "customType": "regex",
       "description": "Container image tags in ModuLix docs",
-      "fileMatch": ["^30-modulix/.*\\.md$"],
+      "managerFilePatterns": ["/^30-modulix/.*\\.md$/"],
       "matchStrings": [
         "(?<depName>[a-z0-9.-]+/[a-z0-9._/-]+):(?<currentValue>v?\\d+\\.\\d+\\.\\d+)"
       ],
