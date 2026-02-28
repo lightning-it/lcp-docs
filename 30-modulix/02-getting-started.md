@@ -16,7 +16,7 @@ and runtime access model.
 
 Current defaults:
 
-- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.7.2`
+- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.8.0`
 - run EE image: `quay.io/l-it/ee-wunder-ansible-ubi9:v1.12.1`
 
 ## 2) Container-only mode (no GitHub access)
