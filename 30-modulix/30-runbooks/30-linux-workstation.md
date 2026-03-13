@@ -47,32 +47,32 @@ Service-specific architecture and policy details are documented under
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <workstation-host-fqdn>
+  -i inventories/<inventory-name>/inventory.yml --limit <workbench-host-fqdn>
 
 ./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <workstation-host-fqdn>
+  -i inventories/<inventory-name>/inventory.yml --limit <workbench-host-fqdn>
 
-./scripts/ansible-nav run playbooks/stage-2b/11-workstation.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <workstation-host-fqdn>
+./scripts/ansible-nav run playbooks/stage-2b/11-workbench.yml \
+  -i inventories/<inventory-name>/inventory.yml --limit <workbench-host-fqdn>
 ```
 
 > Notes:
-> - Adjust `--limit` to your workstation FQDN(s).
-> - Stage-2b playbook targets the `workstations` inventory group.
+> - Adjust `--limit` to your workbench FQDN(s).
+> - Stage-2b playbook targets the `workbenches` inventory group.
 > - Use restrictive firewall policy for RDP exposure (prefer mgmt/admin zone only).
 
 ---
 
 ## Linux Workstation playbook: scope and flow
 
-The workstation playbook configures:
+The workbench playbook configures:
 
 - base repositories
 - host firewall policy (when firewall vars are provided)
 - GUI stack (GNOME/XFCE via role vars)
 - XRDP service for remote administration
 
-### High-level execution order (`playbooks/stage-2b/11-workstation.yml`)
+### High-level execution order (`playbooks/stage-2b/11-workbench.yml`)
 
 1. `lit.rhel.repos`
 2. `fedora.linux_system_roles.firewall` *(only when `firewall` vars are set)*

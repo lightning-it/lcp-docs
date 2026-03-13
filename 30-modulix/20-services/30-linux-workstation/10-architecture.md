@@ -8,12 +8,12 @@ with controlled XRDP access.
 ## Execution path
 
 - Service runbook: [`../../30-runbooks/30-linux-workstation.md`](../../30-runbooks/30-linux-workstation.md)
-- Primary playbook: `modulix-automation/ansible/playbooks/stage-2b/11-workstation.yml`
+- Primary playbook: `modulix-automation/ansible/playbooks/stage-2b/11-workbench.yml`
 - Runtime wrapper and execution contract: [`../../03-automation.md`](../../03-automation.md)
 
 ## Role composition
 
-High-level role order in `11-workstation.yml`:
+High-level role order in `11-workbench.yml`:
 
 1. `lit.rhel.repos`
 2. `fedora.linux_system_roles.firewall` (if firewall vars exist)
@@ -22,9 +22,9 @@ High-level role order in `11-workstation.yml`:
 
 ## Integration points
 
-- Inventory group: `workstations`
-- Group vars: `ansible-inventory/inventories/<inventory-name>/group_vars/workstations/`
-- Host vars: `ansible-inventory/inventories/<inventory-name>/host_vars/workstation*.yml`
+- Inventory group: `workbenches`
+- Group vars: `ansible-inventory/inventories/<inventory-name>/group_vars/workbenches/`
+- Host vars: `ansible-inventory/inventories/<inventory-name>/host_vars/workbench*.yml`
 - XRDP policy and zone behavior are documented in [`30-firewall-rules.md`](30-firewall-rules.md)
 
 ## Boundaries

@@ -18,7 +18,7 @@ technical constraints apply.
 | --- | --- | --- | --- |
 | `10` Wunderbox | `10-wunderbox/00-index.md` | `../30-runbooks/10-wunderbox.md` | `playbooks/stage-2b/12-wunderbox.yml`, `playbooks/services/01-wunderbox-rebuild.yml` |
 | `20` AAP | `20-aap/00-index.md` | `../30-runbooks/20-aap.md` | `playbooks/stage-2b/13-aap.yml`, `playbooks/services/02-aap-rebuild.yml` |
-| `30` Linux Workstation | `30-linux-workstation/00-index.md` | `../30-runbooks/30-linux-workstation.md` | `playbooks/stage-2b/11-workstation.yml` |
+| `30` Linux Workstation | `30-linux-workstation/00-index.md` | `../30-runbooks/30-linux-workstation.md` | `playbooks/stage-2b/11-workbench.yml` |
 | `40` OCP | `40-ocp/00-index.md` | `../30-runbooks/40-ocp.md` | `playbooks/stage-2c/container-platform-ocp4/prepare-ee.yml`, `20-ocp-install.yml`, `21-post-install.yml` |
 
 Service specifications describe the target build. Runbooks define the method to
