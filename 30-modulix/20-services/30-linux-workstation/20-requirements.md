@@ -5,15 +5,15 @@
 | Area | Requirement | Source |
 | --- | --- | --- |
 | Host profile | RHEL 9 workstation VM with GUI | `../../30-runbooks/30-linux-workstation.md` |
-| Target inventory group | `workstations` | `ansible-inventory/inventories/<inventory-name>/inventory.yml` |
+| Target inventory group | `workbenches` | `ansible-inventory/inventories/<inventory-name>/inventory.yml` |
 | Execution mode | Execution Environment with required collections | `../../03-automation.md` |
-| GUI role | `lit.rhel.gui` | `modulix-automation/ansible/playbooks/stage-2b/11-workstation.yml` |
-| XRDP role | `lit.rhel.xrdp` | `modulix-automation/ansible/playbooks/stage-2b/11-workstation.yml` |
+| GUI role | `lit.rhel.gui` | `modulix-automation/ansible/playbooks/stage-2b/11-workbench.yml` |
+| XRDP role | `lit.rhel.xrdp` | `modulix-automation/ansible/playbooks/stage-2b/11-workbench.yml` |
 
 ## Automation prerequisites
 
 - Execute through `./scripts/ansible-nav` (see [`../../03-automation.md`](../../03-automation.md)).
-- Ensure inventory and host vars are defined for workstation hosts.
+- Ensure inventory and host vars are defined for workbench hosts.
 - Ensure firewall vars are present if host firewall role should run.
 
 ## Service policy requirements

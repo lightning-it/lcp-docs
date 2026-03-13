@@ -2,10 +2,10 @@
 
 ## Source of truth
 
-Current firewall behavior for workstation hosts is composed from:
+Current firewall behavior for workbench hosts is composed from:
 
 - `ansible-inventory/inventories/<inventory-name>/group_vars/all/firewall.yml`
-- `ansible-inventory/inventories/<inventory-name>/group_vars/workstations/xrdp.yml`
+- `ansible-inventory/inventories/<inventory-name>/group_vars/workbenches/xrdp.yml`
 
 ## Baseline rule set (current inventory defaults)
 
@@ -19,6 +19,6 @@ Current firewall behavior for workstation hosts is composed from:
 
 ## Change process
 
-1. Update base or workstation-specific firewall vars in `ansible-inventory-lit`.
+1. Update base or workbench-specific firewall vars in `ansible-inventory-lit`.
 2. Update this document to keep architecture docs aligned.
 3. Validate with service runbook execution (`../../30-runbooks/30-linux-workstation.md`).
