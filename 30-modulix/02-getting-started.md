@@ -19,7 +19,7 @@ and runtime access model.
 
 Current defaults:
 
-- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.7.2`
+- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.8.1`
 - run EE image: `quay.io/l-it/ee-wunder-ansible-ubi9-certified:v1.11.6`
 
 ## 2) Run direct playbooks (stage-focused workflows)
@@ -75,7 +75,7 @@ See `03-automation.md` (`Runtime input prerequisites`).
 Use the devtools container for repository tooling (`pre-commit`, `ansible-lint`,
 Molecule, actionlint) without installing all tools on the host.
 
-- image: `quay.io/l-it/ee-wunder-devtools-ubi9:v1.8.0`
+- image: `quay.io/l-it/ee-wunder-devtools-ubi9:v1.8.1`
 - guide: `50-development/02-containers/10-devtools-container.md`
 
 For service operations, use `modulix-launcher`.
