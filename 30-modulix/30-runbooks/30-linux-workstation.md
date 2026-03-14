@@ -71,6 +71,7 @@ The workbench playbook configures:
 - host firewall policy (when firewall vars are provided)
 - GUI stack (GNOME/XFCE via role vars)
 - XRDP service for remote administration
+- optional Cloudflare WARP client enrollment for private/admin connectivity
 
 ### High-level execution order (`playbooks/stage-2b/11-workbench.yml`)
 
@@ -78,3 +79,4 @@ The workbench playbook configures:
 2. `fedora.linux_system_roles.firewall` *(only when `firewall` vars are set)*
 3. `lit.rhel.gui`
 4. `lit.rhel.xrdp`
+5. `lit.supplementary.cloudflare_warp` *(optional, inventory-driven)*
