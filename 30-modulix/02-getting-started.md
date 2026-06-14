@@ -19,7 +19,7 @@ and runtime access model.
 
 Current defaults:
 
-- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.8.3`
+- wrapper image: `quay.io/l-it/ee-wunder-toolbox-ubi9:v1.8.4`
 - run EE image: `quay.io/l-it/ee-wunder-ansible-ubi9-certified:v1.11.6`
 
 ## 2) Run direct playbooks (stage-focused workflows)
