@@ -48,6 +48,6 @@ separately.
 
 Treat `modulix-automation-runtime` version updates as runtime changes:
 
-1. review release notes/changelog impact
+1. review GitHub Release notes impact
 2. validate critical runbooks (`30-runbooks/*`) in target environment
 3. roll out with normal patch/change governance
