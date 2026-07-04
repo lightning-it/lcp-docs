@@ -39,7 +39,7 @@ podman run --rm -it \
   -e GIT_CONFIG_COUNT=1 \
   -e GIT_CONFIG_KEY_0=safe.directory \
   -e GIT_CONFIG_VALUE_0="$PWD" \
-  quay.io/l-it/ee-wunder-devtools-ubi9:v1.8.5 \
+  quay.io/l-it/ee-wunder-devtools-ubi9:v1.9.4 \
   pre-commit run --all-files
 ```
 
