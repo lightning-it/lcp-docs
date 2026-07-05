@@ -1,0 +1,25 @@
+schema_version: 1
+managed_by: lightning-it/shared-assets
+repository: lcp-docs
+visibility: public
+repository_type: documentation
+release_type: none
+artifact_type: documentation
+test_profiles:
+- pre-commit
+- markdown
+- link-check
+os_matrix:
+- ubuntu-latest
+product_matrix:
+- lcp-docs
+publishing_targets: []
+galaxy_publish: false
+quay_publish: false
+release_evidence: false
+heavy_incus_required: false
+readme_badges:
+- pre-commit
+- license
+workflows:
+  ci: repository-quality.yml
