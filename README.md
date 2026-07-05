@@ -1,10 +1,14 @@
 # Lightning IT Control Platform (LCP) Docs
 
-<!-- BEGIN LIT_SHARED_RELEASE_MODEL -->
+<!-- BEGIN LIT_QUALITY_BADGES -->
 
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lightning-it/lcp-docs/badge)](https://scorecard.dev/viewer/?uri=github.com/lightning-it/lcp-docs)
 [![CI](https://github.com/lightning-it/lcp-docs/actions/workflows/repository-quality.yml/badge.svg?branch=develop)](https://github.com/lightning-it/lcp-docs/actions/workflows/repository-quality.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lightning-it/lcp-docs/badge)](https://scorecard.dev/viewer/?uri=github.com/lightning-it/lcp-docs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+<!-- END LIT_QUALITY_BADGES -->
+
+<!-- BEGIN LIT_SHARED_RELEASE_MODEL -->
 
 ## Release and Quality Model
 
@@ -22,6 +26,13 @@ See [RELEASE.md](./RELEASE.md) for:
 Repository classification: **Documentation Repository**.
 Required test profiles: `pre-commit, markdown, link-check`.
 Publishing targets: `none`.
+
+## Supported and Tested Platforms
+
+| Platform / Product | Status | Validation |
+|---|---:|---|
+| ubuntu-latest | Supported | Repository quality |
+| lcp-docs | Tested where applicable | Repository quality |
 
 <!-- END LIT_SHARED_RELEASE_MODEL -->
 
