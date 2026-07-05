@@ -1,5 +1,29 @@
 # Lightning IT Control Platform (LCP) Docs
 
+<!-- BEGIN LIT_SHARED_RELEASE_MODEL -->
+
+[![CI](https://github.com/lightning-it/lcp-docs/actions/workflows/repository-quality.yml/badge.svg?branch=develop)](https://github.com/lightning-it/lcp-docs/actions/workflows/repository-quality.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+## Release and Quality Model
+
+This repository follows the Lightning IT shared release and quality model.
+
+See [RELEASE.md](./RELEASE.md) for:
+
+- branch and release flow
+- required quality checks
+- test matrix
+- release evidence
+- artifact publishing
+- supported repository-specific release behavior
+
+Repository classification: **Documentation Repository**.
+Required test profiles: `pre-commit, markdown, link-check`.
+Publishing targets: `none`.
+
+<!-- END LIT_SHARED_RELEASE_MODEL -->
+
 This repository is the entry point for internal and operator-facing documentation of the **Lightning IT Control Platform (LCP)**.
 
 Product context: https://www.lightning-it.de/produkte/lcp
