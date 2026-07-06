@@ -1,5 +1,33 @@
 # Lightning IT Control Platform (LCP) Docs
 
+<!-- BEGIN LIT_SHARED_RELEASE_MODEL -->
+
+## Release and Quality Model
+
+This repository follows the Lightning IT shared release and quality model.
+
+See [RELEASE.md](./RELEASE.md) for:
+
+- branch and release flow
+- required quality checks
+- test matrix
+- release evidence
+- artifact publishing
+- supported repository-specific release behavior
+
+Repository classification: **Documentation Repository**.
+Required test profiles: `pre-commit, markdown, link-check`.
+Publishing targets: `none`.
+
+## Supported and Tested Platforms
+
+| Platform / Product | Status | Validation |
+|---|---:|---|
+| ubuntu-latest | Supported | Repository quality |
+| lcp-docs | Tested where applicable | Repository quality |
+
+<!-- END LIT_SHARED_RELEASE_MODEL -->
+
 <!-- BEGIN LIT_QUALITY_BADGES -->
 
 [![CI](https://github.com/lightning-it/lcp-docs/actions/workflows/repository-quality.yml/badge.svg?branch=develop)](https://github.com/lightning-it/lcp-docs/actions/workflows/repository-quality.yml)
