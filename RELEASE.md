@@ -18,7 +18,7 @@ This repository follows the Lightning IT shared release and quality model.
 - `main` is the protected release branch.
 - This repository does not publish release artifacts; `main` still represents the protected stable branch.
 - A `develop` to `main` promotion PR is created automatically when releasable changes exist.
-- The `develop` to `main` PR is a manual gate and must never be auto-merged.
+- The `develop` to `main` PR may auto-merge only after current-revision Copilot review, required checks, and conversation resolution.
 - After `main` changes, a `main` to `develop` backmerge PR is created or updated automatically.
 - Backmerge PRs may auto-merge only when required checks are green and there are no conflicts.
 
@@ -34,7 +34,7 @@ This repository follows the Lightning IT shared release and quality model.
 ## Documentation Release
 
 - CI validates Markdown quality, links where practical, and repository structure.
-- Published documentation changes are promoted through the `develop` to `main` manual gate.
+- Published documentation changes are promoted through a Copilot-reviewed, check-gated `develop` to `main` pull request.
 - Documentation must not expose secrets, private inventory values, customer data, or credential-bearing examples.
 
 ## Release Evidence
