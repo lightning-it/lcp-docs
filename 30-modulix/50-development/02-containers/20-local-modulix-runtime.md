@@ -79,7 +79,7 @@ export RUN_TOOLBOX_IMAGE=localhost/ee-wunder-toolbox-ubi9:local
 ## 1) Build Local Run EE Image
 
 ```bash
-cd "$NEW_ROOT/container-ee-wunder-ansible-ubi9"
+cd "$NEW_ROOT/container-ee-wunder-ansible-ubi9" || exit
 podman build -t "$RUN_EE_IMAGE" .
 ```
 
@@ -92,7 +92,7 @@ podman run --rm "$RUN_EE_IMAGE" ansible --version
 ## 2) Build Local Toolbox Image
 
 ```bash
-cd "$NEW_ROOT/container-ee-wunder-toolbox-ubi9"
+cd "$NEW_ROOT/container-ee-wunder-toolbox-ubi9" || exit
 podman build -t "$RUN_TOOLBOX_IMAGE" .
 ```
 
@@ -105,19 +105,20 @@ podman run --rm "$RUN_TOOLBOX_IMAGE" ansible-nav-local --help
 If you do not have the toolbox repo locally yet:
 
 ```bash
-cd "$NEW_ROOT"
+cd "$NEW_ROOT" || exit
 git clone https://github.com/lightning-it/container-ee-wunder-toolbox-ubi9.git
-cd container-ee-wunder-toolbox-ubi9
+cd container-ee-wunder-toolbox-ubi9 || exit
 podman build -t "$RUN_TOOLBOX_IMAGE" .
 ```
 
 ## 3) Prepare Runtime Environment for `modulix-launcher`
 
 ```bash
-cd "$NEW_ROOT"
+cd "$NEW_ROOT" || exit
 
 export INVENTORY_DIR="$NEW_ROOT/ansible-inventory-lit/inventories"
-export INVENTORY_NAME=<inventory-name>
+export INVENTORY_NAME="inventory-name"
+export TARGET="host.example.com"
 export VAULT_PASS_FILE="$NEW_ROOT/modulix-automation/.vault-pass.txt"
 ```
 
@@ -199,28 +200,28 @@ Wunderbox deploy:
 
 ```bash
 modulix-launcher --inventory-dir "$INVENTORY_DIR" services wunderbox \
-  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit <HOST>
+  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit "$TARGET"
 ```
 
 Wunderbox rebuild:
 
 ```bash
 modulix-launcher --inventory-dir "$INVENTORY_DIR" services wunderbox --rebuild \
-  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit <HOST>
+  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit "$TARGET"
 ```
 
 AAP deploy:
 
 ```bash
 modulix-launcher --inventory-dir "$INVENTORY_DIR" services aap \
-  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit <HOST>
+  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit "$TARGET"
 ```
 
 AAP rebuild:
 
 ```bash
 modulix-launcher --inventory-dir "$INVENTORY_DIR" services aap --rebuild \
-  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit <HOST>
+  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit "$TARGET"
 ```
 
 Run an explicit playbook path:
@@ -228,7 +229,7 @@ Run an explicit playbook path:
 ```bash
 modulix-launcher --inventory-dir "$INVENTORY_DIR" services wunderbox \
   --playbook playbooks/services/12-wunderbox-service-stack.yml \
-  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit <HOST>
+  -i "inventories/$INVENTORY_NAME/inventory.yml" --limit "$TARGET"
 ```
 
 ## 5) Common Failure Patterns
