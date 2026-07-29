@@ -17,7 +17,8 @@ modulix-launcher --inventory-dir /path/to/inventories services wunderbox \
 ```
 
 ```bash
-./scripts/ansible-nav run playbooks/stage-or-service/playbook.yml -i <inventory.yml> --limit "host-or-group"
+./scripts/ansible-nav run playbooks/stage-or-service/playbook.yml \
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 For this path, do not run local overlay install by default:
