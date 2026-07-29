@@ -7,3 +7,9 @@
 - Require new or modified third-party GitHub Actions dependencies to use immutable commit SHAs.
 - Explain each finding's impact and propose a concrete fix.
 - Prefer a regression test for bugs and security issues.
+- Treat `AGENTS.md` as the canonical repository contract. A managed
+  `AGENTS_SHA256` marker below binds these instructions to the reviewed
+  `AGENTS.md`; instruction drift is a blocking finding.
+
+<!-- Managed contract: Codex and Copilot must apply AGENTS.md. -->
+<!-- AGENTS_SHA256: 39a2f6309315e78bbe50fa9aad1d9edc2d3dc04f3cf080f8d7ebef87a81883f7 -->
