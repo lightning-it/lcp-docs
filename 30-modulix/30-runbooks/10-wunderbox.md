@@ -50,14 +50,14 @@ Service-specific architecture and policy details are documented under
 
 ```bash
 modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
-  services wunderbox -i inventories/<inventory-name>/inventory.yml \
-  --limit <wunderbox-host-fqdn>
+  services wunderbox -i inventories/inventory-name/inventory.yml \
+  --limit "host-or-group"
 ```
 
 ```bash
 modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
-  services wunderbox --rebuild -i inventories/<inventory-name>/inventory.yml \
-  --limit <wunderbox-host-fqdn>
+  services wunderbox --rebuild -i inventories/inventory-name/inventory.yml \
+  --limit "host-or-group"
 ```
 
 ### Direct stage playbooks (advanced / stage-specific)
@@ -66,13 +66,13 @@ modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2b/12-wunderbox.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 #### Split service playbooks
@@ -80,15 +80,15 @@ modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
 ```bash
 # VMware provisioning only (VM/template + SSH wait)
 ./scripts/ansible-nav run playbooks/services/10-wunderbox-vmware-provision.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 # OS baseline only
 ./scripts/ansible-nav run playbooks/services/11-wunderbox-os-base.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 # Wunderbox service stack
 ./scripts/ansible-nav run playbooks/services/12-wunderbox-service-stack.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <wunderbox-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 > Notes:

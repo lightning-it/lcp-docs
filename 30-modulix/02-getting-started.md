@@ -7,10 +7,12 @@ Run ModuLix service workflows via the launcher:
 ```bash
 export NEW_ROOT="${NEW_ROOT:-$HOME/sources/lit/NEW}"
 export INVENTORY_DIR="$NEW_ROOT/ansible-inventory-lit/inventories"
+# Export MODULIX_SERVICE=aap to select AAP; the default is Wunderbox.
+service="${MODULIX_SERVICE:-wunderbox}"
 
 modulix-launcher --inventory-dir "$INVENTORY_DIR" \
-  services <wunderbox|aap> \
-  -i inventories/<inventory-name>/inventory.yml --limit <host-or-group>
+  services "$service" \
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 Inventory is environment-specific and maintained by the platform team.
@@ -29,9 +31,11 @@ Use `scripts/ansible-nav` when you need direct stage playbook execution
 
 ```bash
 export NEW_ROOT="${NEW_ROOT:-$HOME/sources/lit/NEW}"
-cd "$NEW_ROOT/modulix-automation/ansible"
-./scripts/ansible-nav run playbooks/<stage-or-service>/<playbook>.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <host-or-group>
+(
+  cd "$NEW_ROOT/modulix-automation/ansible" || exit
+  ./scripts/ansible-nav run playbooks/stage-or-service/playbook.yml \
+    -i inventories/inventory-name/inventory.yml --limit "host-or-group"
+)
 ```
 
 ## 3) Container-only mode (no GitHub access)

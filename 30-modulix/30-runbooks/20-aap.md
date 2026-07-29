@@ -20,14 +20,14 @@ configuration-as-code, and day-2 operations.
 
 ```bash
 modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
-  services aap -i inventories/<inventory-name>/inventory.yml \
-  --limit <aap-host-fqdn>
+  services aap -i inventories/inventory-name/inventory.yml \
+  --limit "host-or-group"
 ```
 
 ```bash
 modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
-  services aap --rebuild -i inventories/<inventory-name>/inventory.yml \
-  --limit <aap-host-fqdn>
+  services aap --rebuild -i inventories/inventory-name/inventory.yml \
+  --limit "host-or-group"
 ```
 
 ### Direct stage playbooks (advanced / stage-specific)
@@ -36,33 +36,33 @@ modulix-launcher --inventory-dir /path/to/ansible-inventory/inventories \
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 #### AAP rebuild (single pipeline playbook)
 
 ```bash
 ./scripts/ansible-nav run playbooks/services/02-aap-rebuild.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 #### Run only specific AAP phases
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn> -t aap_deploy
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group" -t aap_deploy
 
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn> -t aap_cac
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group" -t aap_cac
 
 ./scripts/ansible-nav run playbooks/stage-2b/13-aap.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <aap-host-fqdn> \
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group" \
   -t aap_ops -e aap_ops_action=status
 ```
 

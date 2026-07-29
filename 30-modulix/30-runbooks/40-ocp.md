@@ -45,13 +45,13 @@ Service-specific architecture and policy details are documented under
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-2c/container-platform-ocp4/prepare-ee.yml \
-  -i inventories/<inventory-name>/inventory.yml
+  -i inventories/inventory-name/inventory.yml
 
 ./scripts/ansible-nav run playbooks/stage-2c/container-platform-ocp4/20-ocp-install.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <ocp-host-or-group>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2c/container-platform-ocp4/21-post-install.yml \
-  -i inventories/<inventory-name>/inventory.yml
+  -i inventories/inventory-name/inventory.yml
 ```
 
 > Notes:
