@@ -79,8 +79,10 @@ export RUN_TOOLBOX_IMAGE=localhost/ee-wunder-toolbox-ubi9:local
 ## 1) Build Local Run EE Image
 
 ```bash
-cd "$NEW_ROOT/container-ee-wunder-ansible-ubi9" || exit
-podman build -t "$RUN_EE_IMAGE" .
+(
+  cd "$NEW_ROOT/container-ee-wunder-ansible-ubi9" || exit
+  podman build -t "$RUN_EE_IMAGE" .
+)
 ```
 
 Quick verification:
@@ -92,8 +94,10 @@ podman run --rm "$RUN_EE_IMAGE" ansible --version
 ## 2) Build Local Toolbox Image
 
 ```bash
-cd "$NEW_ROOT/container-ee-wunder-toolbox-ubi9" || exit
-podman build -t "$RUN_TOOLBOX_IMAGE" .
+(
+  cd "$NEW_ROOT/container-ee-wunder-toolbox-ubi9" || exit
+  podman build -t "$RUN_TOOLBOX_IMAGE" .
+)
 ```
 
 Quick verification:
@@ -105,17 +109,17 @@ podman run --rm "$RUN_TOOLBOX_IMAGE" ansible-nav-local --help
 If you do not have the toolbox repo locally yet:
 
 ```bash
-cd "$NEW_ROOT" || exit
-git clone https://github.com/lightning-it/container-ee-wunder-toolbox-ubi9.git
-cd container-ee-wunder-toolbox-ubi9 || exit
-podman build -t "$RUN_TOOLBOX_IMAGE" .
+(
+  cd "$NEW_ROOT" || exit
+  git clone https://github.com/lightning-it/container-ee-wunder-toolbox-ubi9.git
+  cd container-ee-wunder-toolbox-ubi9 || exit
+  podman build -t "$RUN_TOOLBOX_IMAGE" .
+)
 ```
 
 ## 3) Prepare Runtime Environment for `modulix-launcher`
 
 ```bash
-cd "$NEW_ROOT" || exit
-
 export INVENTORY_DIR="$NEW_ROOT/ansible-inventory-lit/inventories"
 export INVENTORY_NAME="inventory-name"
 export TARGET="host.example.com"

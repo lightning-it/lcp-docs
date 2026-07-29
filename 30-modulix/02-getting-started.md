@@ -29,9 +29,11 @@ Use `scripts/ansible-nav` when you need direct stage playbook execution
 
 ```bash
 export NEW_ROOT="${NEW_ROOT:-$HOME/sources/lit/NEW}"
-cd "$NEW_ROOT/modulix-automation/ansible" || exit
-./scripts/ansible-nav run playbooks/stage-or-service/playbook.yml \
-  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
+(
+  cd "$NEW_ROOT/modulix-automation/ansible" || exit
+  ./scripts/ansible-nav run playbooks/stage-or-service/playbook.yml \
+    -i inventories/inventory-name/inventory.yml --limit "host-or-group"
+)
 ```
 
 ## 3) Container-only mode (no GitHub access)
