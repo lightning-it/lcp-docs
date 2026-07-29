@@ -47,13 +47,13 @@ Service-specific architecture and policy details are documented under
 
 ```bash
 ./scripts/ansible-nav run playbooks/stage-1/infrastructure-platform-vsphere/20-vm-template.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <workbench-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2a/traditional-operating-systems/rhel9/01-base-setup.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <workbench-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 
 ./scripts/ansible-nav run playbooks/stage-2b/11-workbench.yml \
-  -i inventories/<inventory-name>/inventory.yml --limit <workbench-host-fqdn>
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 > Notes:

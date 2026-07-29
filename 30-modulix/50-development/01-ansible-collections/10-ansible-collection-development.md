@@ -12,12 +12,13 @@ This guide covers development workflows for local `ansible-collection-*` reposit
 Normal runtime path:
 
 ```bash
-modulix-launcher --inventory-dir <inventories-root> services <wunderbox|aap> \
-  -i inventories/<inventory-name>/inventory.yml --limit <host-or-group>
+modulix-launcher --inventory-dir /path/to/inventories services wunderbox \
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 ```bash
-./scripts/ansible-nav run <playbook.yml> -i <inventory.yml> --limit <host-or-group>
+./scripts/ansible-nav run playbooks/stage-or-service/playbook.yml \
+  -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
 For this path, do not run local overlay install by default:
