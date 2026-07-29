@@ -7,9 +7,10 @@ Run ModuLix service workflows via the launcher:
 ```bash
 export NEW_ROOT="${NEW_ROOT:-$HOME/sources/lit/NEW}"
 export INVENTORY_DIR="$NEW_ROOT/ansible-inventory-lit/inventories"
+service="${MODULIX_SERVICE:-wunderbox}" # Set to aap for the AAP service.
 
 modulix-launcher --inventory-dir "$INVENTORY_DIR" \
-  services wunderbox \
+  services "$service" \
   -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 

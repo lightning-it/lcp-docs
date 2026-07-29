@@ -12,7 +12,8 @@ This guide covers development workflows for local `ansible-collection-*` reposit
 Normal runtime path:
 
 ```bash
-modulix-launcher --inventory-dir /path/to/inventories services wunderbox \
+service="${MODULIX_SERVICE:-wunderbox}" # Set to aap for the AAP service.
+modulix-launcher --inventory-dir /path/to/inventories services "$service" \
   -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
 
