@@ -32,7 +32,8 @@ Use this file (`03-automation.md`) for generic runtime behavior only (wrapper, c
 ### Use the runtime wrapper
 
 ```bash
-service="${MODULIX_SERVICE:-wunderbox}" # Set to aap for the AAP service.
+# Export MODULIX_SERVICE=aap to select AAP; the default is Wunderbox.
+service="${MODULIX_SERVICE:-wunderbox}"
 modulix-launcher --inventory-dir /path/to/inventories services "$service" \
   -i inventories/inventory-name/inventory.yml --limit "host-or-group"
 ```
