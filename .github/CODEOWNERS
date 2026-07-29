@@ -1,0 +1,8 @@
+* @lightning-it/ent:release
+
+/.github/ @lightning-it/ent:release
+/.lit/ @lightning-it/ent:release
+/10-isms/ @lightning-it/ent:release
+/20-pgf/ @lightning-it/ent:release
+/30-modulix/ @lightning-it/ent:release
+/scripts/ @lightning-it/ent:release

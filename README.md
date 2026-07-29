@@ -21,10 +21,10 @@ Publishing targets: `none`.
 
 ## Supported and Tested Platforms
 
-| Platform / Product | Status | Validation |
-|---|---:|---|
-| ubuntu-latest | Supported | Repository quality |
-| lcp-docs | Tested where applicable | Repository quality |
+| Platform / Product |                  Status | Validation         |
+| ------------------ | ----------------------: | ------------------ |
+| ubuntu-latest      |               Supported | Repository quality |
+| lcp-docs           | Tested where applicable | Repository quality |
 
 <!-- END LIT_SHARED_RELEASE_MODEL -->
 
@@ -107,7 +107,7 @@ See:
 
 - [RELEASE.md](./RELEASE.md)
 - [TESTING.md](./TESTING.md)
-- [GitHub Releases](../../releases)
+- [GitHub Releases](https://github.com/lightning-it/lcp-docs/releases)
 
 Repository classification: **Documentation Repository**.
 Required test profiles: `pre-commit, markdown, link-check`.
@@ -139,4 +139,4 @@ The evidence records:
 - publish status
 - security scan status
 
-See [GitHub Releases](../../releases), [RELEASE.md](./RELEASE.md), and [TESTING.md](./TESTING.md) for the release process and validation model.
+See [GitHub Releases](https://github.com/lightning-it/lcp-docs/releases), [RELEASE.md](./RELEASE.md), and [TESTING.md](./TESTING.md) for the release process and validation model.
