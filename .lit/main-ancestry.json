@@ -1,0 +1,7 @@
+{
+  "develop_parent_sha": "f494be2bef104f699ed166dc746fdb0e4e575a95",
+  "main_sha": "9b8486fb28e6ce7c0706875ba27f417e0b4ad8cd",
+  "purpose": "Bind the reviewed main ancestry backmerge.",
+  "repository": "lightning-it/lcp-docs",
+  "schema_version": 1
+}
