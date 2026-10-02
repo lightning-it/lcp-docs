@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   quality:
+    timeout-minutes: 30
     name: docs / quality
     runs-on: ubuntu-latest
     steps:
