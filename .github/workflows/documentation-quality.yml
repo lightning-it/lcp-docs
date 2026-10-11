@@ -23,6 +23,6 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
-          python-version: "3.14"
+          python-version: "3.15"
       - name: Validate internal Markdown links
         run: python3 scripts/check-markdown-links.py
